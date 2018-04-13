@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8082448-ae4a-4f60-9c61-8865cae393fe" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Users/adam.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Users/adam.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/gorczynskimike/todoapp/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/gorczynskimike/todoapp/Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/gorczynskimike/todoapp/DataValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/gorczynskimike/todoapp/DataValidator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/DataValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/DataValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/Task.java" afterDir="false" />
@@ -28,8 +31,8 @@
       <file leaf-file-name="Application.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="156" column="21" lean-forward="true" selection-start-line="156" selection-start-column="21" selection-end-line="156" selection-end-column="21" />
+            <state relative-caret-position="194">
+              <caret line="39" selection-start-line="39" selection-end-line="39" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2765#2796#0" expanded="true" />
@@ -68,15 +71,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="adam.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="adam.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Users/adam.txt">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="63">
+              <caret line="3" column="63" lean-forward="true" selection-start-line="3" selection-start-column="63" selection-end-line="3" selection-end-column="63" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file leaf-file-name="UserManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/UserManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1203">
+            <state relative-caret-position="-1077">
               <caret line="30" column="74" selection-start-line="30" selection-start-column="74" selection-end-line="30" selection-end-column="74" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -92,16 +99,16 @@
       <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2136">
-              <caret line="237" column="49" lean-forward="true" selection-start-line="237" selection-start-column="49" selection-end-line="237" selection-end-column="49" />
+            <state relative-caret-position="194">
+              <caret line="93" selection-start-line="93" selection-end-line="93" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3431#3432#0" expanded="true" />
-                <element signature="e#3484#3485#0" expanded="true" />
-                <element signature="e#3536#3537#0" expanded="true" />
-                <element signature="e#3592#3593#0" expanded="true" />
-                <element signature="e#7296#7327#0" expanded="true" />
-                <element signature="e#7992#8023#0" expanded="true" />
+                <element signature="e#3742#3743#0" expanded="true" />
+                <element signature="e#3801#3802#0" expanded="true" />
+                <element signature="e#3855#3856#0" expanded="true" />
+                <element signature="e#3912#3913#0" expanded="true" />
+                <element signature="e#7483#7514#0" expanded="true" />
+                <element signature="e#8182#8213#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -110,8 +117,8 @@
       <file leaf-file-name="DataValidator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/DataValidator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="35" lean-forward="true" selection-start-column="35" selection-end-column="35" />
+            <state relative-caret-position="194">
+              <caret line="17" column="85" lean-forward="true" selection-start-line="17" selection-start-column="85" selection-end-line="17" selection-end-column="85" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -119,15 +126,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Task.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Task.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/Task.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="93">
-              <caret line="83" column="141" lean-forward="true" selection-start-line="83" selection-start-column="141" selection-end-line="83" selection-end-column="141" />
+            <state relative-caret-position="315">
+              <caret line="96" column="71" lean-forward="true" selection-start-line="96" selection-start-column="71" selection-end-line="96" selection-end-column="71" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#447#448#0" expanded="true" />
                 <element signature="e#485#486#0" expanded="true" />
+                <element signature="e#661#662#0" expanded="true" />
+                <element signature="e#692#693#0" expanded="true" />
                 <element signature="e#519#520#0" expanded="true" />
                 <element signature="e#557#558#0" expanded="true" />
                 <element signature="e#592#593#0" expanded="true" />
@@ -466,10 +475,11 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/TaskStatus.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/UserManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/DataValidator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/Task.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/Application.java" />
+        <option value="$PROJECT_DIR$/Users/adam.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/Task.java" />
       </list>
     </option>
   </component>
@@ -628,12 +638,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1523637984894</updated>
-      <workItem from="1523637987877" duration="9022000" />
+      <workItem from="1523637987877" duration="10918000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9022000" />
+    <option name="totallyTimeSpent" value="10918000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-9" width="1864" height="1098" extended-state="6" />
@@ -649,11 +659,11 @@
       <window_info anchor="right" id="Maven Projects" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32984293" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32984293" />
       <window_info anchor="bottom" id="Terminal" weight="0.32984293" />
       <window_info id="Capture Tool" />
       <window_info id="Designer" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18689057" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18689057" />
       <window_info anchor="bottom" id="Build" weight="0.32984293" />
       <window_info anchor="right" id="Database" />
       <window_info anchor="right" id="Gradle" />
@@ -717,44 +727,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/DataValidator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="35" lean-forward="true" selection-start-column="35" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/TaskStatus.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/Task.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="83" column="141" lean-forward="true" selection-start-line="83" selection-start-column="141" selection-end-line="83" selection-end-column="141" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#447#448#0" expanded="true" />
-            <element signature="e#485#486#0" expanded="true" />
-            <element signature="e#519#520#0" expanded="true" />
-            <element signature="e#557#558#0" expanded="true" />
-            <element signature="e#592#593#0" expanded="true" />
-            <element signature="e#628#629#0" expanded="true" />
-            <element signature="e#817#818#0" expanded="true" />
-            <element signature="e#857#858#0" expanded="true" />
-            <element signature="e#882#883#0" expanded="true" />
-            <element signature="e#924#925#0" expanded="true" />
-            <element signature="e#980#981#0" expanded="true" />
-            <element signature="e#1028#1029#0" expanded="true" />
-            <element signature="e#1232#1233#0" expanded="true" />
-            <element signature="e#1281#1282#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -782,9 +758,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/DataValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="17" column="85" lean-forward="true" selection-start-line="17" selection-start-column="85" selection-end-line="17" selection-end-column="85" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/UserManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1203">
+        <state relative-caret-position="-1077">
           <caret line="30" column="74" selection-start-line="30" selection-start-column="74" selection-end-line="30" selection-end-column="74" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -796,26 +782,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2136">
-          <caret line="237" column="49" lean-forward="true" selection-start-line="237" selection-start-column="49" selection-end-line="237" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3431#3432#0" expanded="true" />
-            <element signature="e#3484#3485#0" expanded="true" />
-            <element signature="e#3536#3537#0" expanded="true" />
-            <element signature="e#3592#3593#0" expanded="true" />
-            <element signature="e#7296#7327#0" expanded="true" />
-            <element signature="e#7992#8023#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="156" column="21" lean-forward="true" selection-start-line="156" selection-start-column="21" selection-end-line="156" selection-end-column="21" />
+        <state relative-caret-position="194">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2765#2796#0" expanded="true" />
@@ -824,7 +794,53 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Users/adam.txt">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="63" lean-forward="true" selection-start-line="3" selection-start-column="63" selection-end-line="3" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="93" selection-start-line="93" selection-end-line="93" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3742#3743#0" expanded="true" />
+            <element signature="e#3801#3802#0" expanded="true" />
+            <element signature="e#3855#3856#0" expanded="true" />
+            <element signature="e#3912#3913#0" expanded="true" />
+            <element signature="e#7483#7514#0" expanded="true" />
+            <element signature="e#8182#8213#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/Task.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="96" column="71" lean-forward="true" selection-start-line="96" selection-start-column="71" selection-end-line="96" selection-end-column="71" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#447#448#0" expanded="true" />
+            <element signature="e#485#486#0" expanded="true" />
+            <element signature="e#661#662#0" expanded="true" />
+            <element signature="e#692#693#0" expanded="true" />
+            <element signature="e#519#520#0" expanded="true" />
+            <element signature="e#557#558#0" expanded="true" />
+            <element signature="e#592#593#0" expanded="true" />
+            <element signature="e#628#629#0" expanded="true" />
+            <element signature="e#817#818#0" expanded="true" />
+            <element signature="e#857#858#0" expanded="true" />
+            <element signature="e#882#883#0" expanded="true" />
+            <element signature="e#924#925#0" expanded="true" />
+            <element signature="e#980#981#0" expanded="true" />
+            <element signature="e#1028#1029#0" expanded="true" />
+            <element signature="e#1232#1233#0" expanded="true" />
+            <element signature="e#1281#1282#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

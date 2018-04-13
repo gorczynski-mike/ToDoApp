@@ -76,6 +76,15 @@ public class User {
             }
         }
 
+        public void printAllTasksForToday() {
+            LocalDate today = LocalDate.now();
+            for(Task task : User.this.tasksList) {
+                if(task.getTaskDate().equals(today)) {
+                    System.out.println(task);
+                }
+            }
+        }
+
         public void loadUserTasks() {
             try (
                     BufferedReader br = Files.newBufferedReader(userTasksFile);

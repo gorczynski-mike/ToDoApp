@@ -21,6 +21,10 @@ public class Task extends AbstractTask{
         return this.taskStatus;
     }
 
+    public LocalDate getTaskDate() {
+        return taskDate;
+    }
+
     public int getTaskNumber() {
         return this.taskNumber;
     }

@@ -15,7 +15,7 @@ public class DataValidator {
     private static final Pattern miniUserChoicePattern = Pattern.compile("[12]");
     private static final Pattern datePattern = Pattern.compile("\\d{4}-\\d{2}-\\d{2}");
     private static final Pattern taskNamePattern = Pattern.compile(".*[\\S]+.*");
-    private static final Pattern mainMenuChoicePattern = Pattern.compile("[0-7]");
+    private static final Pattern mainMenuChoicePattern = Pattern.compile("[0-7]|32");
 
     public static boolean validateName(String userName) {
         Matcher matcher = namePattern.matcher(userName);

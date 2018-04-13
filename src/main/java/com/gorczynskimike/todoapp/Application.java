@@ -45,13 +45,14 @@ public class Application {
 
     private static void mainLoop() {
         int menuChoice = -1;
+        mainLoop:
         while(menuChoice != 0) {
             printMenu();
             menuChoice = getMenuChoice();
             switch(menuChoice) {
                 case 1:
                     System.out.printf("%nYou have chosen: 1. Show me my tasks for today.%n%n");
-                    user.tasksManager.printAllTasks();
+                    user.tasksManager.printAllTasksForToday();
                     break;
                 case 2:
                     System.out.printf("%nYou have chosen: 2. Show me all my todo tasks.%n%n");
@@ -60,6 +61,10 @@ public class Application {
                 case 3:
                     System.out.printf("%nYou have chosen: 3. Show me all my finished tasks.%n%n");
                     user.tasksManager.printAllDoneTasks();
+                    break;
+                case 32:
+                    System.out.println("%nYou have chosen: 32. Show me my tasks.%n%n");
+                    user.tasksManager.printAllTasks();
                     break;
                 case 4:
                     markAsCompleted();
@@ -75,11 +80,13 @@ public class Application {
                     break;
                 case 0:
                     System.out.println("Exiting.");
-                    break;
+                    break mainLoop;
                 default:
                     System.err.println("Option not recognized. This should never happen!");
                     break;
             }
+            System.out.println("Press enter to continue");
+            scanner.nextLine();
         }
     }
 
@@ -245,7 +252,7 @@ public class Application {
 
         String menuChoice = scanner.nextLine();
         while(!DataValidator.validateMainMenuChoice(menuChoice)) {
-            System.out.println("You need to choose an int in range of 0-7. Try again.");
+            System.out.println("You need to choose an int in range of 0-7 or 32. Try again.");
             menuChoice = scanner.nextLine();
         }
         return Integer.parseInt(menuChoice);
@@ -256,6 +263,7 @@ public class Application {
         System.out.println("1. Show me my tasks for today.");
         System.out.println("2. Show me all my todo tasks.");
         System.out.println("3. Show me all my finished tasks.");
+        System.out.println("    32. Show me all my tasks.");
         System.out.println("4. Mark task as completed.");
         System.out.println("5. Add task.");
         System.out.println("6. Modify task.");
