@@ -28,6 +28,7 @@ public class UserManager {
     private static void loadUsers() {
         try {
             List<String> userNames = Files.readAllLines(usersFile);
+            System.out.println("Users found in the database: " + userNames);
             for(String userName : userNames) {
                 usersList.add(new User(userName));
             }

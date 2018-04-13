@@ -60,7 +60,13 @@ public class User {
         }
 
         public void addTask(Task task) {
-            User.this.tasksList.add(task);
+            String taskName = task.getTaskName();
+            if (findTask(taskName) != null) {
+                System.out.println("Task with name " + taskName + " already exists. Cannot add task.");
+                return;
+            } else {
+                User.this.tasksList.add(task);
+            }
         }
 
         public void printAllTasks() {
@@ -104,6 +110,32 @@ public class User {
                 if(task.getTaskStatus() == TaskStatus.DONE) {
                     System.out.println(task);
                 }
+            }
+        }
+
+        public boolean taskExists(int taskNumber) {
+            return findTask(taskNumber) != null;
+        }
+
+        public boolean taskExists(String taskName) {
+            return findTask(taskName) != null;
+        }
+
+        public void printTask(int taskNumber) {
+            Task task = findTask(taskNumber);
+            if(task != null) {
+                System.out.println(task);
+            } else {
+                System.out.println("Task #" + taskNumber + " not found in database.");
+            }
+        }
+
+        public void printTask(String taskName) {
+            Task task = findTask(taskName);
+            if(task != null) {
+                System.out.println(task);
+            } else {
+                System.out.println("Task with name " + taskName + " not found in database");
             }
         }
 
@@ -189,6 +221,36 @@ public class User {
                 }
             }
             return maxValue;
+        }
+
+        @SuppressWarnings("Duplicates")
+        public boolean modifyTask(String taskName, String taskDate, String taskPlace, String taskComment){
+            Task taskToBeModified = findTask(taskName);
+            if (taskToBeModified == null) {
+                System.out.println("Task not found, couldn't modify the task.");
+                return false;
+            }
+            taskToBeModified.setTaskDate(taskDate);
+            taskToBeModified.setTaskPlace(taskPlace);
+            taskToBeModified.setTaskComments(taskComment);
+            System.out.println("Task has been successfully modified: ");
+            System.out.println(taskToBeModified);
+            return true;
+        }
+
+        @SuppressWarnings("Duplicates")
+        public boolean modifyTask(int taskNumber, String taskDate, String taskPlace, String taskComment){
+            Task taskToBeModified = findTask(taskNumber);
+            if (taskToBeModified == null) {
+                System.out.println("Task not found, couldn't modify the task.");
+                return false;
+            }
+            taskToBeModified.setTaskDate(taskDate);
+            taskToBeModified.setTaskPlace(taskPlace);
+            taskToBeModified.setTaskComments(taskComment);
+            System.out.println("Task has been successfully modified: ");
+            System.out.println(taskToBeModified);
+            return true;
         }
 
     }

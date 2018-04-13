@@ -67,7 +67,6 @@ public class Application {
                     break;
                 case 6:
                     modifyTask();
-                    System.out.printf("%nYou have chosen: 6. Modify task.%n%n");
                     break;
                 case 7:
                     deleteTask();
@@ -82,8 +81,73 @@ public class Application {
         }
     }
 
+    @SuppressWarnings("Duplicates")
     private static void modifyTask() {
+        System.out.printf("%nYou have chosen: 6. Modify task.%n%n");
+        int userChoice = getMiniUserChoice();
+        boolean taskExists = false;
+        switch(userChoice) {
+            case 1:
+                int taskNumber = getTaskNumber();
+                taskExists = user.tasksManager.taskExists(taskNumber);
+                if(taskExists) {
+                    System.out.println("Task found in database, the following task will be modified: ");
+                    user.tasksManager.printTask(taskNumber);
+                    System.out.println("Please type new date of the task: ");
+                    String newTaskDate = getTaskDate();
+                    System.out.println("Please type new place of the task (optional, hit enter if you don't"
+                            + "wish to enter this info): ");
+                    String newTaskPlace = scanner.nextLine().trim();
+                    System.out.println("Please type new comment of the task (optional, hit enter if you don't"
+                            + "wish to enter this info): ");
+                    String newTaskComment = scanner.nextLine().trim();
+                    user.tasksManager.modifyTask(taskNumber,newTaskDate, newTaskPlace, newTaskComment);
+                } else {
+                    System.out.println("Task with number " + taskNumber + " not found in database, nothing modified.");
+                }
+                break;
+            case 2:
+                String taskName = getTaskName();
+                taskExists = user.tasksManager.taskExists(taskName);
+                if(taskExists) {
+                    System.out.println("Task found in database, the following task will be modified: ");
+                    user.tasksManager.printTask(taskName);
+                    System.out.println("Please type new date of the task: ");
+                    String newTaskDate = getTaskDate();
+                    System.out.println("Please type new place of the task (optional, hit enter if you don't"
+                            + "wish to enter this info): ");
+                    String newTaskPlace = scanner.nextLine().trim();
+                    System.out.println("Please type new comment of the task (optional, hit enter if you don't"
+                            + "wish to enter this info): ");
+                    String newTaskComment = scanner.nextLine().trim();
+                    user.tasksManager.modifyTask(taskName,newTaskDate, newTaskPlace, newTaskComment);
+                } else {
+                    System.out.println("Task with name " + taskName + " not found in database, nothing modified.");
+                }
+                break;
+            default:
+                System.err.println("Unrecognized user mini choice. This should never happen!");
+                break;
+        }
+    }
 
+    private static String getTaskName() {
+        String taskName = scanner.nextLine();
+        while(!(DataValidator.validateTaskName(taskName))) {
+            System.out.println("Task name connot be empty, try again: ");
+            taskName = scanner.nextLine();
+        }
+        taskName = taskName.trim();
+        return taskName;
+    }
+
+    private static String getTaskDate() {
+        String taskDate = scanner.nextLine();
+        while(!(DataValidator.validateDate(taskDate))) {
+            System.out.println("Incorrect format (DD-MM-YYYY), try again: ");
+            taskDate = scanner.nextLine();
+        }
+        return taskDate;
     }
 
     private static void addTask() {
@@ -166,10 +230,10 @@ public class Application {
         return Integer.parseInt(taskNumber);
     }
 
-    private static String getTaskName() {
-        System.out.println("Enter the task name: ");
-        return scanner.nextLine();
-    }
+//    private static String getTaskName() {
+//        System.out.println("Enter the task name: ");
+//        return scanner.nextLine();
+//    }
 
     private static int getMenuChoice() {
 

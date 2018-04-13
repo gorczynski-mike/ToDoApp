@@ -28,6 +28,18 @@ public class Task extends AbstractTask{
         return this.taskName;
     }
 
+    public void setTaskDate(String taskDate) {
+        this.taskDate = taskDate;
+    }
+
+    public void setTaskPlace(String taskPlace) {
+        this.taskPlace = taskPlace;
+    }
+
+    public void setTaskComments(String taskComments) {
+        this.taskComments = taskComments;
+    }
+
     public Task(int taskNumber, String taskName, String taskDate, String taskPlace, String
             taskComments) {
         this.taskNumber = taskNumber;
