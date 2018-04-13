@@ -1,5 +1,7 @@
 package com.gorczynskimike.todoapp;
 
+import java.time.DateTimeException;
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Application {
@@ -94,7 +96,7 @@ public class Application {
                     System.out.println("Task found in database, the following task will be modified: ");
                     user.tasksManager.printTask(taskNumber);
                     System.out.println("Please type new date of the task: ");
-                    String newTaskDate = getTaskDate();
+                    LocalDate newTaskDate = getTaskDate();
                     System.out.println("Please type new place of the task (optional, hit enter if you don't"
                             + "wish to enter this info): ");
                     String newTaskPlace = scanner.nextLine().trim();
@@ -113,7 +115,7 @@ public class Application {
                     System.out.println("Task found in database, the following task will be modified: ");
                     user.tasksManager.printTask(taskName);
                     System.out.println("Please type new date of the task: ");
-                    String newTaskDate = getTaskDate();
+                    LocalDate newTaskDate = getTaskDate();
                     System.out.println("Please type new place of the task (optional, hit enter if you don't"
                             + "wish to enter this info): ");
                     String newTaskPlace = scanner.nextLine().trim();
@@ -141,13 +143,21 @@ public class Application {
         return taskName;
     }
 
-    private static String getTaskDate() {
-        String taskDate = scanner.nextLine();
-        while(!(DataValidator.validateDate(taskDate))) {
-            System.out.println("Incorrect format (DD-MM-YYYY), try again: ");
-            taskDate = scanner.nextLine();
+    private static LocalDate getTaskDate() {
+        while (true) {
+            try {
+                String taskDate = scanner.nextLine();
+                while (!(DataValidator.validateDate(taskDate))) {
+                    System.out.println("Incorrect format (YYYY-MM-DD), try again: ");
+                    taskDate = scanner.nextLine();
+                }
+                String[] dateItems = taskDate.split("-");
+                LocalDate taskLocalDate = LocalDate.of(Integer.parseInt(dateItems[0]), Integer.parseInt(dateItems[1]), Integer.parseInt(dateItems[2]));
+                return taskLocalDate;
+            } catch (Exception e) {
+                System.out.println("Typed date is incorrect, try again.");
+            }
         }
-        return taskDate;
     }
 
     private static void addTask() {
@@ -159,19 +169,15 @@ public class Application {
             taskName = scanner.nextLine();
         }
         taskName = taskName.trim();
-        System.out.println("Please type the date of the task (format: DD-MM-YYYY): ");
-        String taskDate = scanner.nextLine();
-        while(!(DataValidator.validateDate(taskDate))) {
-            System.out.println("Incorrect format (DD-MM-YYYY), try again: ");
-            taskDate = scanner.nextLine();
-        }
+        System.out.println("Please type the date of the task (format: YYYY-MM-DD): ");
+        LocalDate taskLocalDate = getTaskDate();
         System.out.println("Please type the place of the task (optional, hit enter if you don't"
                 + "wish to enter this info): ");
         String taskPlace = scanner.nextLine().trim();
         System.out.println("Please type the comment of the task (optional, hit enter if you don't"
                 + "wish to enter this info): ");
         String taskComment = scanner.nextLine().trim();
-        user.tasksManager.addTask(taskName, taskDate, taskPlace, taskComment);
+        user.tasksManager.addTask(taskName, taskLocalDate, taskPlace, taskComment);
     }
 
     private static void deleteTask() {

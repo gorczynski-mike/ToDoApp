@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.time.LocalDate;
 
 public class Task extends AbstractTask{
 
@@ -12,7 +13,7 @@ public class Task extends AbstractTask{
     private TaskStatus taskStatus = TaskStatus.TODO;
     private int taskNumber = 123;
     private String taskName = "name";
-    private String taskDate = "date";
+    private LocalDate taskDate;
     private String taskPlace = "place";
     private String taskComments = "comment";
 
@@ -28,7 +29,7 @@ public class Task extends AbstractTask{
         return this.taskName;
     }
 
-    public void setTaskDate(String taskDate) {
+    public void setTaskDate(LocalDate taskDate) {
         this.taskDate = taskDate;
     }
 
@@ -40,7 +41,7 @@ public class Task extends AbstractTask{
         this.taskComments = taskComments;
     }
 
-    public Task(int taskNumber, String taskName, String taskDate, String taskPlace, String
+    public Task(int taskNumber, String taskName, LocalDate taskDate, String taskPlace, String
             taskComments) {
         this.taskNumber = taskNumber;
         this.taskName = taskName;
@@ -49,7 +50,7 @@ public class Task extends AbstractTask{
         this.taskComments = taskComments;
     }
 
-    private Task (TaskStatus taskStatus, int taskNumber, String taskName, String taskDate, String taskPlace, String
+    private Task (TaskStatus taskStatus, int taskNumber, String taskName, LocalDate taskDate, String taskPlace, String
             taskComments) {
         this(taskNumber, taskName, taskDate, taskPlace, taskComments);
         this.taskStatus = taskStatus;
@@ -73,7 +74,14 @@ public class Task extends AbstractTask{
         TaskStatus newTaskStatus = TaskStatus.valueOf(taskItems.get(0));
         int newTaskNumber = Integer.parseInt(taskItems.get(1));
         String newTaskName = taskItems.get(2);
-        String newTaskDate = taskItems.get(3);
+        String dateString = taskItems.get(3);
+        String[] dateItems = dateString.split("-");
+        if(dateItems.length != 3) {
+            throw new IllegalArgumentException("Corrupted row in task database");
+        }
+//        System.out.printf("%s %s %s %d %d %d", dateItems[0], dateItems[1], dateItems[2], Integer.parseInt(dateItems[0]),
+//                Integer.parseInt(dateItems[1]), Integer.parseInt(dateItems[2]));
+        LocalDate newTaskDate = LocalDate.of(Integer.parseInt(dateItems[0]), Integer.parseInt(dateItems[1]), Integer.parseInt(dateItems[2]));
         String newTaskPlace = taskItems.get(4);
         String newTaskComments = taskItems.get(5);
 

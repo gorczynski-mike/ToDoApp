@@ -7,6 +7,7 @@ import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -53,7 +54,7 @@ public class User {
         private final Pattern taskItemPattern = Pattern.compile("");
         private int maxTaskNumber;
 
-        public void addTask(String taskName, String taskDate, String taskPlace, String taskComment) {
+        public void addTask(String taskName, LocalDate taskDate, String taskPlace, String taskComment) {
             int taskNumber = findMaxTaskNumber() + 1;
             Task task = new Task(taskNumber, taskName, taskDate, taskPlace, taskComment);
             addTask(task);
@@ -224,7 +225,7 @@ public class User {
         }
 
         @SuppressWarnings("Duplicates")
-        public boolean modifyTask(String taskName, String taskDate, String taskPlace, String taskComment){
+        public boolean modifyTask(String taskName, LocalDate taskDate, String taskPlace, String taskComment){
             Task taskToBeModified = findTask(taskName);
             if (taskToBeModified == null) {
                 System.out.println("Task not found, couldn't modify the task.");
@@ -239,7 +240,7 @@ public class User {
         }
 
         @SuppressWarnings("Duplicates")
-        public boolean modifyTask(int taskNumber, String taskDate, String taskPlace, String taskComment){
+        public boolean modifyTask(int taskNumber, LocalDate taskDate, String taskPlace, String taskComment){
             Task taskToBeModified = findTask(taskNumber);
             if (taskToBeModified == null) {
                 System.out.println("Task not found, couldn't modify the task.");
