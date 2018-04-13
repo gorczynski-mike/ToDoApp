@@ -9,6 +9,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -51,8 +52,9 @@ public class User {
     public class TasksManager {
 
         private final Path userTasksFile = Paths.get("Users", name + ".txt");
-        private final Pattern taskItemPattern = Pattern.compile("");
-        private int maxTaskNumber;
+        private String tableHeader = String.format("| %s| %5s| %30s | %10s | %30s | %30s|",
+                "status","number","name","date","place","comments");
+        private String tableBorder = tableHeader.replaceAll(".","=");
 
         public void addTask(String taskName, LocalDate taskDate, String taskPlace, String taskComment) {
             int taskNumber = findMaxTaskNumber() + 1;
@@ -70,19 +72,33 @@ public class User {
             }
         }
 
+        private void printTableHead(){
+            System.out.println(tableBorder);
+            System.out.println(tableHeader);
+            System.out.println(tableBorder);
+        }
+
+        private void printTableFoot() {
+            System.out.println(tableBorder);
+        }
+
         public void printAllTasks() {
+            printTableHead();
             for(Task task : User.this.tasksList) {
-                System.out.println(task);
+                System.out.println(task.getConsoleStringRepresentation());
             }
+            printTableFoot();
         }
 
         public void printAllTasksForToday() {
             LocalDate today = LocalDate.now();
+            printTableHead();
             for(Task task : User.this.tasksList) {
                 if(task.getTaskDate().equals(today)) {
-                    System.out.println(task);
+                    System.out.println(task.getConsoleStringRepresentation());
                 }
             }
+            printTableFoot();
         }
 
         public void loadUserTasks() {
@@ -108,19 +124,23 @@ public class User {
         }
 
         public void printAllTodoTasks() {
+            printTableHead();
             for(Task task : User.this.tasksList) {
                 if(task.getTaskStatus() == TaskStatus.TODO) {
-                    System.out.println(task);
+                    System.out.println(task.getConsoleStringRepresentation());
                 }
             }
+            printTableFoot();
         }
 
         public void printAllDoneTasks() {
+            printTableHead();
             for(Task task : User.this.tasksList) {
                 if(task.getTaskStatus() == TaskStatus.DONE) {
-                    System.out.println(task);
+                    System.out.println(task.getConsoleStringRepresentation());
                 }
             }
+            printTableFoot();
         }
 
         public boolean taskExists(int taskNumber) {

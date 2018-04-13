@@ -63,7 +63,7 @@ public class Application {
                     user.tasksManager.printAllDoneTasks();
                     break;
                 case 32:
-                    System.out.println("%nYou have chosen: 32. Show me my tasks.%n%n");
+                    System.out.printf("%nYou have chosen: 32. Show me my tasks.%n%n");
                     user.tasksManager.printAllTasks();
                     break;
                 case 4:

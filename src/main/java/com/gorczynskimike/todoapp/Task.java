@@ -92,6 +92,16 @@ public class Task extends AbstractTask{
         return new Task(newTaskStatus, newTaskNumber, newTaskName, newTaskDate, newTaskPlace, newTaskComments);
     }
 
+    public String getConsoleStringRepresentation() {
+        return String.format("|%6s | %05d | %30s | %10s | %30s | %30s|",
+                taskStatus,
+                taskNumber,
+                taskName,
+                taskDate,
+                taskPlace,
+                taskComments);
+    }
+
     @Override
     public String toString() {
         return String.format("[%s] - [%d] - [%s] - [%s] - [%s] - [%s]",
