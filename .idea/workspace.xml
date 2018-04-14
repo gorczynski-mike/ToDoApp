@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8082448-ae4a-4f60-9c61-8865cae393fe" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/gorczynskimike/todoapp/TaskTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/gorczynskimike/todoapp/TaskTestSuite.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/gorczynskimike/todoapp/DataValidatorTestSuite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/DataValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/DataValidator.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -38,19 +39,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/UserManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#300#333#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/User.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -71,15 +59,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Comparator.java" pinned="false" current-in-tab="false">
-        <entry file="jar://D:/Java_installation/jdk1.8.0_131/src.zip!/java/util/Comparator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="463" column="24" selection-start-line="463" selection-start-column="24" selection-end-line="463" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="adam.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Users/adam.txt">
           <provider selected="true" editor-type-id="text-editor">
@@ -92,8 +71,8 @@
       <file leaf-file-name="DataValidator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/DataValidator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="17" column="85" selection-start-line="17" selection-start-column="85" selection-end-line="17" selection-end-column="85" />
+            <state relative-caret-position="-972">
+              <caret line="14" column="90" selection-start-line="14" selection-start-column="90" selection-end-line="14" selection-end-column="90" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#206#239#0" expanded="true" />
@@ -102,10 +81,43 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="DataValidatorTestSuite.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/gorczynskimike/todoapp/DataValidatorTestSuite.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="118" column="52" lean-forward="true" selection-start-line="118" selection-start-column="52" selection-end-line="118" selection-end-column="52" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Assert.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/Assert.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="203">
+              <caret line="325" column="23" selection-start-line="325" selection-start-column="23" selection-end-line="325" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ExactComparisonCriteria.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/internal/ExactComparisonCriteria.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
+              <folding>
+                <element signature="e#259#260#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Task.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/Task.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
+            <state relative-caret-position="1890">
               <caret line="108" column="49" selection-start-line="108" selection-start-column="49" selection-end-line="108" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -133,10 +145,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TaskTestSuite.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TaskTestSuite.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/gorczynskimike/todoapp/TaskTestSuite.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="477">
+            <state relative-caret-position="756">
               <caret line="36" column="86" selection-start-line="36" selection-start-column="86" selection-end-line="36" selection-end-column="86" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -468,11 +480,12 @@
         <option value="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/UserManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/Application.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/DataValidator.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/gorczynskimike/todoapp/testing/TaskTestSuite.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/Task.java" />
         <option value="$PROJECT_DIR$/Users/adam.txt" />
         <option value="$PROJECT_DIR$/src/test/java/com/gorczynskimike/todoapp/TaskTestSuite.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/DataValidator.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/gorczynskimike/todoapp/DataValidatorTestSuite.java" />
       </list>
     </option>
   </component>
@@ -584,7 +597,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TaskTestSuite">
+  <component name="RunManager" selected="JUnit.DataValidatorTestSuite">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.gorczynskimike.todoapp.Application" />
       <module name="toDoApp_main" />
@@ -598,6 +611,52 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="DataValidatorTestSuite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="toDoApp_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.gorczynskimike.todoapp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.gorczynskimike.todoapp" />
+      <option name="MAIN_CLASS_NAME" value="com.gorczynskimike.todoapp.DataValidatorTestSuite" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="DataValidatorTestSuite.testValidateTaskDate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="toDoApp_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.gorczynskimike.todoapp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.gorczynskimike.todoapp" />
+      <option name="MAIN_CLASS_NAME" value="com.gorczynskimike.todoapp.DataValidatorTestSuite" />
+      <option name="METHOD_NAME" value="testValidateTaskDate" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
     </configuration>
     <configuration name="TaskTestSuite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="toDoApp_test" />
@@ -687,9 +746,13 @@
       <item itemvalue="Application.Application" />
       <item itemvalue="JUnit.TaskTestSuite" />
       <item itemvalue="JUnit.TaskTestSuite.testNewTaskHasStatusTodo" />
+      <item itemvalue="JUnit.DataValidatorTestSuite" />
+      <item itemvalue="JUnit.DataValidatorTestSuite.testValidateTaskDate" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DataValidatorTestSuite" />
+        <item itemvalue="JUnit.DataValidatorTestSuite.testValidateTaskDate" />
         <item itemvalue="JUnit.TaskTestSuite" />
         <item itemvalue="JUnit.TaskTestSuite.testNewTaskHasStatusTodo" />
         <item itemvalue="Application.Application" />
@@ -707,32 +770,44 @@
       <option name="presentableId" value="Default" />
       <updated>1523637984894</updated>
       <workItem from="1523637987877" duration="13404000" />
-      <workItem from="1523704807971" duration="15478000" />
+      <workItem from="1523704807971" duration="17335000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TaskTestSuite - 2018.04.14 at 21h 37m 09s.xml">
-      <configuration name="TaskTestSuite" configurationId="JUnit" />
+    <history-entry file="DataValidatorTestSuite - 2018.04.14 at 23h 42m 15s.xml">
+      <configuration name="DataValidatorTestSuite" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TaskTestSuite - 2018.04.14 at 21h 38m 21s.xml">
-      <configuration name="TaskTestSuite" configurationId="JUnit" />
+    <history-entry file="DataValidatorTestSuite - 2018.04.14 at 23h 45m 12s.xml">
+      <configuration name="DataValidatorTestSuite" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TaskTestSuite - 2018.04.14 at 21h 52m 18s.xml">
-      <configuration name="TaskTestSuite" configurationId="JUnit" />
+    <history-entry file="DataValidatorTestSuite_testValidateTaskDate - 2018.04.14 at 23h 46m 11s.xml">
+      <configuration name="DataValidatorTestSuite.testValidateTaskDate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TaskTestSuite_testNewTaskHasStatusTodo - 2018.04.14 at 21h 52m 37s.xml">
-      <configuration name="TaskTestSuite.testNewTaskHasStatusTodo" configurationId="JUnit" />
+    <history-entry file="DataValidatorTestSuite_testValidateTaskDate - 2018.04.14 at 23h 47m 19s.xml">
+      <configuration name="DataValidatorTestSuite.testValidateTaskDate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TaskTestSuite - 2018.04.14 at 21h 52m 43s.xml">
-      <configuration name="TaskTestSuite" configurationId="JUnit" />
+    <history-entry file="DataValidatorTestSuite_testValidateTaskDate - 2018.04.14 at 23h 47m 35s.xml">
+      <configuration name="DataValidatorTestSuite.testValidateTaskDate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TaskTestSuite - 2018.04.14 at 21h 53m 17s.xml">
-      <configuration name="TaskTestSuite" configurationId="JUnit" />
+    <history-entry file="DataValidatorTestSuite - 2018.04.14 at 23h 47m 43s.xml">
+      <configuration name="DataValidatorTestSuite" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DataValidatorTestSuite - 2018.04.14 at 23h 49m 46s.xml">
+      <configuration name="DataValidatorTestSuite" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DataValidatorTestSuite - 2018.04.14 at 23h 51m 47s.xml">
+      <configuration name="DataValidatorTestSuite" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DataValidatorTestSuite - 2018.04.14 at 23h 52m 16s.xml">
+      <configuration name="DataValidatorTestSuite" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DataValidatorTestSuite - 2018.04.14 at 23h 53m 56s.xml">
+      <configuration name="DataValidatorTestSuite" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28882000" />
+    <option name="totallyTimeSpent" value="30739000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-9" width="1864" height="1098" extended-state="6" />
@@ -748,8 +823,8 @@
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32984293" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32984293" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32984293" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32984293" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18689057" />
@@ -778,7 +853,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="4" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -977,17 +1052,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/DataValidator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="17" column="85" selection-start-line="17" selection-start-column="85" selection-end-line="17" selection-end-column="85" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#206#239#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="246">
@@ -1027,9 +1091,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Users/adam.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/gorczynskimike/todoapp/TaskTestSuite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="36" column="86" selection-start-line="36" selection-start-column="86" selection-end-line="36" selection-end-column="86" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/Task.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
+        <state relative-caret-position="1890">
           <caret line="108" column="49" selection-start-line="108" selection-start-column="49" selection-end-line="108" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1056,17 +1137,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Users/adam.txt">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/internal/ExactComparisonCriteria.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="45" />
+        <state relative-caret-position="147">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#259#260#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/gorczynskimike/todoapp/TaskTestSuite.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/Assert.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="36" column="86" selection-start-line="36" selection-start-column="86" selection-end-line="36" selection-end-column="86" />
+        <state relative-caret-position="203">
+          <caret line="325" column="23" selection-start-line="325" selection-start-column="23" selection-end-line="325" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/DataValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-972">
+          <caret line="14" column="90" selection-start-line="14" selection-start-column="90" selection-end-line="14" selection-end-column="90" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#206#239#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/gorczynskimike/todoapp/DataValidatorTestSuite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="118" column="52" lean-forward="true" selection-start-line="118" selection-start-column="52" selection-end-line="118" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
