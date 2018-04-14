@@ -67,7 +67,7 @@ public class User {
             } else {
                 User.this.tasksList.add(task);
                 System.out.println("Task added successfully. Task details:");
-                System.out.println(task.getConsoleStringRepresentation());
+                System.out.println(task);
             }
         }
 

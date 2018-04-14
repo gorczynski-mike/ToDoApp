@@ -170,12 +170,21 @@ public class Application {
     private static void addTask() {
         System.out.printf("%nYou have chosen: 5. Add task.%n%n");
         System.out.println("Please type the name of the task: ");
-        String taskName = scanner.nextLine();
-        while(!(DataValidator.validateTaskName(taskName))) {
-            System.out.println("Task name connot be empty, try again: ");
+        String taskName = "";
+        boolean taskNameIsValid = false;
+        while(!taskNameIsValid) {
             taskName = scanner.nextLine();
+            while (!(DataValidator.validateTaskName(taskName))) {
+                System.out.println("Task name connot be empty, try again: ");
+                taskName = scanner.nextLine();
+            }
+            taskName = taskName.trim();
+            if(!user.tasksManager.taskExists(taskName)) {
+                taskNameIsValid = true;
+            } else {
+                System.out.println("Task with name: " + taskName + " already exists, try again.");
+            }
         }
-        taskName = taskName.trim();
         System.out.println("Please type the date of the task (format: YYYY-MM-DD): ");
         LocalDate taskLocalDate = getTaskDate();
         System.out.println("Please type the place of the task (optional, hit enter if you don't"
