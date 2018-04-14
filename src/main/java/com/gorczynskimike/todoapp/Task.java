@@ -2,6 +2,7 @@ package com.gorczynskimike.todoapp;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.time.LocalDate;
@@ -35,6 +36,14 @@ public class Task{
 
     public String getTaskName() {
         return this.taskName;
+    }
+
+    public String getTaskPlace() {
+        return taskPlace;
+    }
+
+    public String getTaskComments() {
+        return taskComments;
     }
 
     public void setTaskDate(LocalDate taskDate) {
@@ -128,4 +137,22 @@ public class Task{
                 taskComments);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Task task = (Task) o;
+        return taskNumber == task.taskNumber &&
+                taskStatus == task.taskStatus &&
+                Objects.equals(taskName, task.taskName) &&
+                Objects.equals(taskDate, task.taskDate) &&
+                Objects.equals(taskPlace, task.taskPlace) &&
+                Objects.equals(taskComments, task.taskComments);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(taskStatus, taskNumber, taskName, taskDate, taskPlace, taskComments);
+    }
 }
