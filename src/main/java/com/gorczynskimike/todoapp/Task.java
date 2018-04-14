@@ -6,7 +6,11 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.time.LocalDate;
 
-public class Task extends AbstractTask{
+/**
+ * Every user's task is stored as an instance of the Task class
+ */
+@SuppressWarnings("WeakerAccess")
+public class Task{
 
     private static final Pattern taskItemPattern = Pattern.compile("\\[.*?\\]");
 
@@ -60,10 +64,19 @@ public class Task extends AbstractTask{
         this.taskStatus = taskStatus;
     }
 
+    /**
+     * Mark this task as done
+     */
     public void completeTask() {
         this.taskStatus = TaskStatus.DONE;
     }
 
+    /**
+     * Decodes task coded as a String
+     * @param encodedTask the task coded as a String, standard form created by Task.toString() method
+     * @return returns decoded task
+     * @throws IllegalArgumentException
+     */
     public static Task decodeTask(String encodedTask) throws IllegalArgumentException {
         Matcher matcher = taskItemPattern.matcher(encodedTask);
         List<String> taskItems = new ArrayList<>();
@@ -83,8 +96,6 @@ public class Task extends AbstractTask{
         if(dateItems.length != 3) {
             throw new IllegalArgumentException("Corrupted row in task database");
         }
-//        System.out.printf("%s %s %s %d %d %d", dateItems[0], dateItems[1], dateItems[2], Integer.parseInt(dateItems[0]),
-//                Integer.parseInt(dateItems[1]), Integer.parseInt(dateItems[2]));
         LocalDate newTaskDate = LocalDate.of(Integer.parseInt(dateItems[0]), Integer.parseInt(dateItems[1]), Integer.parseInt(dateItems[2]));
         String newTaskPlace = taskItems.get(4);
         String newTaskComments = taskItems.get(5);
@@ -92,6 +103,10 @@ public class Task extends AbstractTask{
         return new Task(newTaskStatus, newTaskNumber, newTaskName, newTaskDate, newTaskPlace, newTaskComments);
     }
 
+    /**
+     * String that can be used to print task to console
+     * @return formatted String representation of the task
+     */
     public String getConsoleStringRepresentation() {
         return String.format("|%6s | %05d | %30s | %10s | %30s | %30s|",
                 taskStatus,

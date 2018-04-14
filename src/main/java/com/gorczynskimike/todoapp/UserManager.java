@@ -10,6 +10,7 @@ import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
 
+@SuppressWarnings("WeakerAccess")
 public class UserManager {
 
     private static final Path usersFile = Paths.get("users.txt");
@@ -51,7 +52,7 @@ public class UserManager {
 
         try (
                 BufferedWriter bw = Files.newBufferedWriter(usersFile, StandardOpenOption.APPEND);
-                PrintWriter pw = new PrintWriter(bw);
+                PrintWriter pw = new PrintWriter(bw)
         ) {
             pw.println(userName);
             Files.createFile(Paths.get(usersFolder.toString(), userName.toLowerCase() + ".txt"));
@@ -79,7 +80,7 @@ public class UserManager {
             System.out.println("No users folder found. Trying to create a new folder");
             try {
                 Files.createDirectory(usersFolder);
-                System.out.println("New users folder created succesfully");
+                System.out.println("New users folder created successfully");
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -90,7 +91,7 @@ public class UserManager {
                 System.out.printf("No tasks file found for %s. Trying to create a new file.%n", user);
                 try {
                     Files.createFile(userTasksFile);
-                    System.out.printf("New task file for %s created succesfully.%n", user);
+                    System.out.printf("New task file for %s created successfully.%n", user);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

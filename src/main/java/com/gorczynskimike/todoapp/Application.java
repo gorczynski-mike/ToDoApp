@@ -1,6 +1,5 @@
 package com.gorczynskimike.todoapp;
 
-import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.util.Scanner;
 
@@ -22,7 +21,7 @@ public class Application {
     private static void greetUser() {
         System.out.println("Hello user, what is your name?");
         String name = scanner.nextLine();
-        while(!DataValidator.validateName(name)) {
+        while(!DataValidator.validateUserName(name)) {
             System.out.println("Chosen name is invalid, only [a-zA-Z] letters are allowed. Try again.");
             name = scanner.nextLine();
         }
@@ -44,9 +43,9 @@ public class Application {
     }
 
     private static void mainLoop() {
-        int menuChoice = -1;
+        int menuChoice;
         mainLoop:
-        while(menuChoice != 0) {
+        while(true) {
             printMenu();
             menuChoice = getMenuChoice();
             switch(menuChoice) {
@@ -94,7 +93,7 @@ public class Application {
     private static void modifyTask() {
         System.out.printf("%nYou have chosen: 6. Modify task.%n%n");
         int userChoice = getMiniUserChoice();
-        boolean taskExists = false;
+        boolean taskExists;
         switch(userChoice) {
             case 1:
                 int taskNumber = getTaskNumber();
@@ -105,10 +104,10 @@ public class Application {
                     System.out.println("Please type new date of the task: ");
                     LocalDate newTaskDate = getTaskDate();
                     System.out.println("Please type new place of the task (optional, hit enter if you don't"
-                            + "wish to enter this info): ");
+                            + " wish to enter this info): ");
                     String newTaskPlace = scanner.nextLine().trim();
                     System.out.println("Please type new comment of the task (optional, hit enter if you don't"
-                            + "wish to enter this info): ");
+                            + " wish to enter this info): ");
                     String newTaskComment = scanner.nextLine().trim();
                     user.tasksManager.modifyTask(taskNumber,newTaskDate, newTaskPlace, newTaskComment);
                 } else {
@@ -143,7 +142,7 @@ public class Application {
     private static String getTaskName() {
         String taskName = scanner.nextLine();
         while(!(DataValidator.validateTaskName(taskName))) {
-            System.out.println("Task name connot be empty, try again: ");
+            System.out.println("Task name cannot be empty, try again: ");
             taskName = scanner.nextLine();
         }
         taskName = taskName.trim();
@@ -154,13 +153,12 @@ public class Application {
         while (true) {
             try {
                 String taskDate = scanner.nextLine();
-                while (!(DataValidator.validateDate(taskDate))) {
+                while (!(DataValidator.validateTaskDate(taskDate))) {
                     System.out.println("Incorrect format (YYYY-MM-DD), try again: ");
                     taskDate = scanner.nextLine();
                 }
                 String[] dateItems = taskDate.split("-");
-                LocalDate taskLocalDate = LocalDate.of(Integer.parseInt(dateItems[0]), Integer.parseInt(dateItems[1]), Integer.parseInt(dateItems[2]));
-                return taskLocalDate;
+                return LocalDate.of(Integer.parseInt(dateItems[0]), Integer.parseInt(dateItems[1]), Integer.parseInt(dateItems[2]));
             } catch (Exception e) {
                 System.out.println("Typed date is incorrect, try again.");
             }
@@ -175,7 +173,7 @@ public class Application {
         while(!taskNameIsValid) {
             taskName = scanner.nextLine();
             while (!(DataValidator.validateTaskName(taskName))) {
-                System.out.println("Task name connot be empty, try again: ");
+                System.out.println("Task name cannot be empty, try again: ");
                 taskName = scanner.nextLine();
             }
             taskName = taskName.trim();
@@ -235,7 +233,7 @@ public class Application {
     private static int getMiniUserChoice() {
         System.out.printf("Please type 1 to select task by number or type 2 to select task by name.%n");
         String userChoice = scanner.nextLine();
-        while(!DataValidator.validateMiniUserChoice(userChoice)) {
+        while(!DataValidator.validateBinaryUserChoice(userChoice)) {
             System.out.println("Invalid selection. Please select either 1 or 2.");
             userChoice = scanner.nextLine();
         }
