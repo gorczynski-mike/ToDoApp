@@ -8,10 +8,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 import java.util.regex.Pattern;
 
 public class User {
@@ -69,6 +66,8 @@ public class User {
                 return;
             } else {
                 User.this.tasksList.add(task);
+                System.out.println("Task added successfully. Task details:");
+                System.out.println(task.getConsoleStringRepresentation());
             }
         }
 
@@ -82,22 +81,28 @@ public class User {
             System.out.println(tableBorder);
         }
 
+
+        /**
+         *  Prints all tasks sorting by task number.
+         */
         public void printAllTasks() {
             printTableHead();
-            for(Task task : User.this.tasksList) {
-                System.out.println(task.getConsoleStringRepresentation());
-            }
+            User.this.tasksList.stream()
+                    .sorted(Comparator.comparing(Task::getTaskNumber))
+                    .forEach(task -> System.out.println(task.getConsoleStringRepresentation()));
             printTableFoot();
         }
 
+        /**
+         *  Prints all tasks for today, sorting first by task status, then by task number.
+         */
         public void printAllTasksForToday() {
             LocalDate today = LocalDate.now();
             printTableHead();
-            for(Task task : User.this.tasksList) {
-                if(task.getTaskDate().equals(today)) {
-                    System.out.println(task.getConsoleStringRepresentation());
-                }
-            }
+            User.this.tasksList.stream()
+                    .filter( task -> task.getTaskDate().equals(today))
+                    .sorted(Comparator.comparing(Task::getTaskStatus).thenComparing(Task::getTaskNumber))
+                    .forEach(task -> System.out.println(task.getConsoleStringRepresentation()));
             printTableFoot();
         }
 
@@ -107,7 +112,7 @@ public class User {
             ) {
                 String line = "";
                 while((line = br.readLine()) != null) {
-                    addTask(Task.decodeTask(line));
+                    User.this.tasksList.add(Task.decodeTask(line));
                 }
             } catch (IOException e) {e.printStackTrace();}
         }
@@ -123,23 +128,27 @@ public class User {
             } catch (IOException e) {e.printStackTrace();}
         }
 
+        /**
+         *  Prints all tasks to do chronologically
+         */
         public void printAllTodoTasks() {
             printTableHead();
-            for(Task task : User.this.tasksList) {
-                if(task.getTaskStatus() == TaskStatus.TODO) {
-                    System.out.println(task.getConsoleStringRepresentation());
-                }
-            }
+            User.this.tasksList.stream()
+                    .filter(task -> task.getTaskStatus().equals(TaskStatus.TODO))
+                    .sorted(Comparator.comparing(Task::getTaskDate))
+                    .forEach(task -> System.out.println(task.getConsoleStringRepresentation()));
             printTableFoot();
         }
 
+        /**
+         *  Prints all finished tasks chronologically
+         */
         public void printAllDoneTasks() {
             printTableHead();
-            for(Task task : User.this.tasksList) {
-                if(task.getTaskStatus() == TaskStatus.DONE) {
-                    System.out.println(task.getConsoleStringRepresentation());
-                }
-            }
+            User.this.tasksList.stream()
+                    .filter(task -> task.getTaskStatus().equals(TaskStatus.DONE))
+                    .sorted(Comparator.comparing(Task::getTaskDate))
+                    .forEach(task -> System.out.println(task.getConsoleStringRepresentation()));
             printTableFoot();
         }
 
