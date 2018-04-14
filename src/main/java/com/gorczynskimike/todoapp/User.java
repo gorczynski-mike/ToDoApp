@@ -9,6 +9,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.*;
+import java.util.function.Function;
+import java.util.function.Predicate;
 
 @SuppressWarnings("WeakerAccess")
 public class User {
@@ -123,9 +125,11 @@ public class User {
             while(taskIterator.hasNext()) {
                 Task current = taskIterator.next();
                 if(current.getTaskNumber() == taskNumber) {
-                    System.out.printf("I have found task with number %d. Deleting task.%n", taskNumber);
+                    System.out.printf("I have found task with number %d. Deleting following task:%n", taskNumber);
+                    System.out.println(current);
                     taskIterator.remove();
                     saveUserTasks();
+                    System.out.println("Task deleted.");
                     return;
                 }
             }
@@ -255,12 +259,21 @@ public class User {
         }
 
         /**
-         *  Prints all tasks sorting by task number.
+         *  Convenience no argument printAllTasks() method.
          */
         public void printAllTasks() {
+            printAllTasks(Task::getTaskNumber);
+        }
+
+        /**
+         * Prints all tasks sorting according to used KeyExtractor
+         * @param keyExtractor the tasks will be sorted according to this keyExtractor
+         * @param <U>
+         */
+        public <U extends Comparable<? super U>> void printAllTasks(Function<? super Task, ? extends U> keyExtractor) {
             printTableHead();
             User.this.tasksList.stream()
-                    .sorted(Comparator.comparing(Task::getTaskNumber))
+                    .sorted(Comparator.comparing(keyExtractor))
                     .forEach(task -> System.out.println(task.getConsoleStringRepresentation()));
             printTableFoot();
         }

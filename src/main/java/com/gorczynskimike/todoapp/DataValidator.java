@@ -15,7 +15,7 @@ public class DataValidator {
     private static final Pattern taskDatePattern = Pattern.compile("\\d{4}-\\d{2}-\\d{2}");
     private static final Pattern taskNamePattern = Pattern.compile(".*[\\S]+.*");
 
-    private static final Pattern mainMenuChoicePattern = Pattern.compile("[0-7]|32");
+    private static final Pattern mainMenuChoicePattern = Pattern.compile("[0-7]|3[2-4]");
     private static final Pattern binaryUserChoicePattern = Pattern.compile("[12]");
 
     /**

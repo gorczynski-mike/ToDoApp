@@ -63,7 +63,15 @@ public class Application {
                     break;
                 case 32:
                     System.out.printf("%nYou have chosen: 32. Show me my tasks.%n%n");
-                    user.tasksManager.printAllTasks();
+                    user.tasksManager.printAllTasks(Task::getTaskNumber);
+                    break;
+                case 33:
+                    System.out.printf("%nYou have chosen: 33. Show me my tasks, sort by task status.%n%n");
+                    user.tasksManager.printAllTasks(Task::getTaskStatus);
+                    break;
+                case 34:
+                    System.out.printf("%nYou have chosen: 34. Show me my tasks, sort by task status.%n%n");
+                    user.tasksManager.printAllTasks(Task::getTaskDate);
                     break;
                 case 4:
                     markAsCompleted();
@@ -277,7 +285,9 @@ public class Application {
         System.out.println("1. Show me my tasks for today.");
         System.out.println("2. Show me all my todo tasks.");
         System.out.println("3. Show me all my finished tasks.");
-        System.out.println("    32. Show me all my tasks.");
+        System.out.println("    32. Show me all my tasks sorted by number.");
+        System.out.println("    33. Show me all my tasks sorted by task status.");
+        System.out.println("    34. Show me all my tasks sorted by date.");
         System.out.println("4. Mark task as completed.");
         System.out.println("5. Add task.");
         System.out.println("6. Modify task.");
