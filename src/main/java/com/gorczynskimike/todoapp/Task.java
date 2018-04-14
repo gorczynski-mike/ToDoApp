@@ -38,14 +38,6 @@ public class Task{
         return this.taskName;
     }
 
-    public String getTaskPlace() {
-        return taskPlace;
-    }
-
-    public String getTaskComments() {
-        return taskComments;
-    }
-
     public void setTaskDate(LocalDate taskDate) {
         this.taskDate = taskDate;
     }
@@ -110,6 +102,14 @@ public class Task{
         String newTaskComments = taskItems.get(5);
 
         return new Task(newTaskStatus, newTaskNumber, newTaskName, newTaskDate, newTaskPlace, newTaskComments);
+    }
+
+    /**
+     * Method used to encode task.
+     * @return String that contains encoded task.
+     */
+    public String encodeTask(){
+        return this.toString();
     }
 
     /**

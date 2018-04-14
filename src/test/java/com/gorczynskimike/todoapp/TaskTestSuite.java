@@ -27,6 +27,17 @@ public class TaskTestSuite {
     }
 
     @Test
+    public void testEncodeTask() {
+        //Given
+        Task task = new Task(1,"name", LocalDate.of(2012,2,4),
+                "place", "comment");
+        //When
+        String encodedTask = task.encodeTask();
+        //Then
+        Assert.assertEquals("[TODO] - [1] - [name] - [2012-02-04] - [place] - [comment]", encodedTask);
+    }
+
+    @Test
     public void testDecodeTask() {
         //Given
         Task task1 = new Task(10, "taskName1", LocalDate.of(1999,4,4),
