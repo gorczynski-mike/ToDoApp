@@ -307,6 +307,29 @@ public class User {
         }
 
         /**
+         * Method used to print all tasks numbers and names, especially useful when user wants to modify or delete one
+         * of them.
+         */
+        public void printAllTasksNumbersAndNames() {
+            System.out.print("All tasks [number:name]: ");
+            User.this.tasksList.stream()
+                    .forEach(task -> System.out.printf("[%s:%s], ",task.getTaskNumber(), task.getTaskName()));
+            System.out.println();
+        }
+
+        /**
+         * Method used to print all 'to do' tasks numbers and names, especially useful when user wants to mark
+         * one of them as finished
+         */
+        public void printAllTodoTasksNumbersAndNames() {
+            System.out.print("All pending todo tasks [number:name]: ");
+            User.this.tasksList.stream()
+                    .filter(task -> task.getTaskStatus().equals(TaskStatus.TODO))
+                    .forEach(task -> System.out.printf("[%s:%s], ",task.getTaskNumber(), task.getTaskName()));
+            System.out.println();
+        }
+
+        /**
          *  Prints all finished tasks chronologically
          */
         public void printAllDoneTasks() {

@@ -92,6 +92,7 @@ public class Application {
     @SuppressWarnings("Duplicates")
     private static void modifyTask() {
         System.out.printf("%nYou have chosen: 6. Modify task.%n%n");
+        user.tasksManager.printAllTasksNumbersAndNames();
         int userChoice = getBinaryUserChoice();
         boolean taskExists;
         switch(userChoice) {
@@ -209,6 +210,7 @@ public class Application {
 
     private static void deleteTask() {
         System.out.println("You have chosen: 7. Delete task.%n%n");
+        user.tasksManager.printAllTasksNumbersAndNames();
         int userChoice = getBinaryUserChoice();
         switch(userChoice) {
             case 1:
@@ -229,6 +231,7 @@ public class Application {
 
     private static void markAsCompleted() {
         System.out.printf("%nYou have chosen: 4. Mark task as completed.%n ");
+        user.tasksManager.printAllTodoTasksNumbersAndNames();
         int userChoice = getBinaryUserChoice();
         switch(userChoice) {
             case 1:
