@@ -15,15 +15,12 @@ public class UserManager {
 
     private static final Path usersFile = Paths.get("users.txt");
     private static final Path usersFolder = Paths.get("Users");
-
     private static List<User> usersList = new ArrayList<>();
 
     public static void initialize() {
-
         validateUsersFile();
         loadUsers();
         validateUsersTasksFiles();
-
     }
 
     private static void loadUsers() {

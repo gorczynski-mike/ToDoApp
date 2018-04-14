@@ -80,6 +80,7 @@ public class User {
                 User.this.tasksList.add(task);
                 System.out.println("Task added successfully. Task details:");
                 System.out.println(task);
+                saveUserTasks();
             }
         }
 
@@ -92,6 +93,7 @@ public class User {
             if(task != null){
                 System.out.printf("I have found task with number %d. Marking task as complete.%n", taskNumber);
                 task.completeTask();
+                saveUserTasks();
             } else {
                 System.out.printf("I haven't found task with number %d. No changes made.%n", taskNumber);
             }
@@ -106,6 +108,7 @@ public class User {
             if(task != null) {
                 System.out.printf("I have found task with name %s. Marking task as complete.%n", taskName);
                 task.completeTask();
+                saveUserTasks();
             } else {
                 System.out.printf("I haven't found task with number %s. No changes made.%n", taskName);
             }
@@ -122,6 +125,7 @@ public class User {
                 if(current.getTaskNumber() == taskNumber) {
                     System.out.printf("I have found task with number %d. Deleting task.%n", taskNumber);
                     taskIterator.remove();
+                    saveUserTasks();
                     return;
                 }
             }
@@ -139,6 +143,7 @@ public class User {
                 if(current.getTaskName().equals(taskName)) {
                     System.out.printf("I have found task with name %s. Deleting task.%n", taskName);
                     taskIterator.remove();
+                    saveUserTasks();
                     return;
                 }
             }
@@ -236,6 +241,7 @@ public class User {
                 return false;
             }
             return modifyTask(taskToBeModified, taskDate, taskPlace, taskComment);
+
         }
 
         public boolean modifyTask(Task taskToBeModified, LocalDate taskDate, String taskPlace, String taskComment) {
@@ -244,6 +250,7 @@ public class User {
             taskToBeModified.setTaskComments(taskComment);
             System.out.println("Task has been successfully modified: ");
             System.out.println(taskToBeModified);
+            saveUserTasks();
             return true;
         }
 

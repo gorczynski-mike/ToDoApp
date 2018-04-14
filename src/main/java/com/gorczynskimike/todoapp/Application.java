@@ -92,10 +92,11 @@ public class Application {
     @SuppressWarnings("Duplicates")
     private static void modifyTask() {
         System.out.printf("%nYou have chosen: 6. Modify task.%n%n");
-        int userChoice = getMiniUserChoice();
+        int userChoice = getBinaryUserChoice();
         boolean taskExists;
         switch(userChoice) {
             case 1:
+                System.out.println("Please type task number: ");
                 int taskNumber = getTaskNumber();
                 taskExists = user.tasksManager.taskExists(taskNumber);
                 if(taskExists) {
@@ -139,6 +140,15 @@ public class Application {
         }
     }
 
+    private static int getTaskNumber() {
+        String taskNumber = scanner.nextLine();
+        while(!(DataValidator.validateTaskNumber(taskNumber))) {
+            System.out.println("Invalid task number, only digits are allowed.");
+            taskNumber = scanner.nextLine();
+        }
+        return Integer.parseInt(taskNumber);
+    }
+
     private static String getTaskName() {
         String taskName = scanner.nextLine();
         while(!(DataValidator.validateTaskName(taskName))) {
@@ -147,6 +157,14 @@ public class Application {
         }
         taskName = taskName.trim();
         return taskName;
+    }
+
+    private static String getTaskPlace() {
+        return scanner.nextLine().trim();
+    }
+
+    private static String getTaskComment() {
+        return scanner.nextLine().trim();
     }
 
     private static LocalDate getTaskDate() {
@@ -160,7 +178,7 @@ public class Application {
                 String[] dateItems = taskDate.split("-");
                 return LocalDate.of(Integer.parseInt(dateItems[0]), Integer.parseInt(dateItems[1]), Integer.parseInt(dateItems[2]));
             } catch (Exception e) {
-                System.out.println("Typed date is incorrect, try again.");
+                System.out.println("Typed date is invalid, try again.");
             }
         }
     }
@@ -171,12 +189,7 @@ public class Application {
         String taskName = "";
         boolean taskNameIsValid = false;
         while(!taskNameIsValid) {
-            taskName = scanner.nextLine();
-            while (!(DataValidator.validateTaskName(taskName))) {
-                System.out.println("Task name cannot be empty, try again: ");
-                taskName = scanner.nextLine();
-            }
-            taskName = taskName.trim();
+            taskName = getTaskName();
             if(!user.tasksManager.taskExists(taskName)) {
                 taskNameIsValid = true;
             } else {
@@ -186,23 +199,25 @@ public class Application {
         System.out.println("Please type the date of the task (format: YYYY-MM-DD): ");
         LocalDate taskLocalDate = getTaskDate();
         System.out.println("Please type the place of the task (optional, hit enter if you don't"
-                + "wish to enter this info): ");
-        String taskPlace = scanner.nextLine().trim();
+                + " wish to enter this info): ");
+        String taskPlace = getTaskPlace();
         System.out.println("Please type the comment of the task (optional, hit enter if you don't"
                 + "wish to enter this info): ");
-        String taskComment = scanner.nextLine().trim();
+        String taskComment = getTaskComment();
         user.tasksManager.addTask(taskName, taskLocalDate, taskPlace, taskComment);
     }
 
     private static void deleteTask() {
         System.out.println("You have chosen: 7. Delete task.%n%n");
-        int userChoice = getMiniUserChoice();
+        int userChoice = getBinaryUserChoice();
         switch(userChoice) {
             case 1:
+                System.out.println("Please type task number: ");
                 int taskNumber = getTaskNumber();
                 user.tasksManager.deleteTask(taskNumber);
                 break;
             case 2:
+                System.out.println("Please type task name: ");
                 String taskName = getTaskName();
                 user.tasksManager.deleteTask(taskName);
                 break;
@@ -214,13 +229,15 @@ public class Application {
 
     private static void markAsCompleted() {
         System.out.printf("%nYou have chosen: 4. Mark task as completed.%n ");
-        int userChoice = getMiniUserChoice();
+        int userChoice = getBinaryUserChoice();
         switch(userChoice) {
             case 1:
+                System.out.println("Please type task number: ");
                 int taskNumber = getTaskNumber();
                 user.tasksManager.completeTask(taskNumber);
                 break;
             case 2:
+                System.out.println("Please type task name: ");
                 String taskName = getTaskName();
                 user.tasksManager.completeTask(taskName);
                 break;
@@ -230,8 +247,8 @@ public class Application {
         }
     }
 
-    private static int getMiniUserChoice() {
-        System.out.printf("Please type 1 to select task by number or type 2 to select task by name.%n");
+    private static int getBinaryUserChoice() {
+        System.out.println("Please type 1 to select task by number or type 2 to select task by name.");
         String userChoice = scanner.nextLine();
         while(!DataValidator.validateBinaryUserChoice(userChoice)) {
             System.out.println("Invalid selection. Please select either 1 or 2.");
@@ -240,15 +257,7 @@ public class Application {
         return Integer.parseInt(userChoice);
     }
 
-    private static int getTaskNumber() {
-        System.out.println("Please type task number: ");
-        String taskNumber = scanner.nextLine();
-        while(!(DataValidator.validateTaskNumber(taskNumber))) {
-            System.out.println("Invalid task number, only digits are allowed.");
-            taskNumber = scanner.nextLine();
-        }
-        return Integer.parseInt(taskNumber);
-    }
+
 
     private static int getMenuChoice() {
 
