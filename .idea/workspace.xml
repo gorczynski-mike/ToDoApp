@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8082448-ae4a-4f60-9c61-8865cae393fe" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users.txt" beforeDir="false" afterPath="$PROJECT_DIR$/users.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -25,8 +27,8 @@
       <file leaf-file-name="Application.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="404">
-              <caret line="185" column="13" lean-forward="true" selection-start-line="185" selection-start-column="13" selection-end-line="185" selection-end-column="13" />
+            <state relative-caret-position="236">
+              <caret line="252" column="5" selection-start-line="252" selection-start-column="5" selection-end-line="252" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -76,16 +78,21 @@
       <file leaf-file-name="User.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="518">
-              <caret line="69" column="39" selection-start-line="69" selection-start-column="39" selection-end-line="69" selection-end-column="39" />
+            <state relative-caret-position="391">
+              <caret line="250" column="9" selection-start-line="250" selection-start-column="9" selection-end-line="250" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4990#4991#0" expanded="true" />
-                <element signature="e#5049#5050#0" expanded="true" />
-                <element signature="e#5103#5104#0" expanded="true" />
-                <element signature="e#5160#5161#0" expanded="true" />
-                <element signature="e#9644#9675#0" expanded="true" />
-                <element signature="e#10343#10374#0" expanded="true" />
+                <element signature="e#287#320#0" expanded="true" />
+                <element signature="e#1074#1107#0" expanded="true" />
+                <element signature="e#1388#1422#0" expanded="true" />
+                <element signature="e#7501#7532#0" expanded="true" />
+                <element signature="e#8506#8537#0" expanded="true" />
+                <element signature="e#2528#2529#0" expanded="true" />
+                <element signature="e#2583#2584#0" expanded="true" />
+                <element signature="e#5650#5651#0" expanded="true" />
+                <element signature="e#5709#5710#0" expanded="true" />
+                <element signature="e#5933#5934#0" expanded="true" />
+                <element signature="e#5990#5991#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -611,12 +618,12 @@
       <option name="presentableId" value="Default" />
       <updated>1523637984894</updated>
       <workItem from="1523637987877" duration="13404000" />
-      <workItem from="1523704807971" duration="3366000" />
+      <workItem from="1523704807971" duration="5992000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16770000" />
+    <option name="totallyTimeSpent" value="19396000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-9" width="1864" height="1098" extended-state="6" />
@@ -752,12 +759,17 @@
           <caret line="54" column="61" selection-start-line="54" selection-start-column="61" selection-end-line="54" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4990#4991#0" expanded="true" />
-            <element signature="e#5049#5050#0" expanded="true" />
-            <element signature="e#5103#5104#0" expanded="true" />
-            <element signature="e#5160#5161#0" expanded="true" />
-            <element signature="e#9644#9675#0" expanded="true" />
-            <element signature="e#10343#10374#0" expanded="true" />
+            <element signature="e#287#320#0" expanded="true" />
+            <element signature="e#1074#1107#0" expanded="true" />
+            <element signature="e#1388#1422#0" expanded="true" />
+            <element signature="e#7501#7532#0" expanded="true" />
+            <element signature="e#8506#8537#0" expanded="true" />
+            <element signature="e#2528#2529#0" expanded="true" />
+            <element signature="e#2583#2584#0" expanded="true" />
+            <element signature="e#5650#5651#0" expanded="true" />
+            <element signature="e#5709#5710#0" expanded="true" />
+            <element signature="e#5933#5934#0" expanded="true" />
+            <element signature="e#5990#5991#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -854,16 +866,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="185" column="13" lean-forward="true" selection-start-line="185" selection-start-column="13" selection-end-line="185" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/UserManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
@@ -874,18 +876,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/User.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="69" column="39" selection-start-line="69" selection-start-column="39" selection-end-line="69" selection-end-column="39" />
+        <state relative-caret-position="236">
+          <caret line="252" column="5" selection-start-line="252" selection-start-column="5" selection-end-line="252" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4990#4991#0" expanded="true" />
-            <element signature="e#5049#5050#0" expanded="true" />
-            <element signature="e#5103#5104#0" expanded="true" />
-            <element signature="e#5160#5161#0" expanded="true" />
-            <element signature="e#9644#9675#0" expanded="true" />
-            <element signature="e#10343#10374#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="250" column="9" selection-start-line="250" selection-start-column="9" selection-end-line="250" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#287#320#0" expanded="true" />
+            <element signature="e#1074#1107#0" expanded="true" />
+            <element signature="e#1388#1422#0" expanded="true" />
+            <element signature="e#7501#7532#0" expanded="true" />
+            <element signature="e#8506#8537#0" expanded="true" />
+            <element signature="e#2528#2529#0" expanded="true" />
+            <element signature="e#2583#2584#0" expanded="true" />
+            <element signature="e#5650#5651#0" expanded="true" />
+            <element signature="e#5709#5710#0" expanded="true" />
+            <element signature="e#5933#5934#0" expanded="true" />
+            <element signature="e#5990#5991#0" expanded="true" />
           </folding>
         </state>
       </provider>

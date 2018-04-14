@@ -9,8 +9,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.*;
-import java.util.regex.Pattern;
 
+@SuppressWarnings("WeakerAccess")
 public class User {
 
     private String name;
@@ -46,24 +46,36 @@ public class User {
         return 34 * (17 + this.name.hashCode());
     }
 
+    @SuppressWarnings("WeakerAccess")
     public class TasksManager {
 
         private final Path userTasksFile = Paths.get("Users", name + ".txt");
         private String tableHeader = String.format("| %s| %5s| %30s | %10s | %30s | %30s|",
                 "status","number","name","date","place","comments");
+        @SuppressWarnings("ReplaceAllDot")
         private String tableBorder = tableHeader.replaceAll(".","=");
 
+        /**
+         * Add task with given attributes to user's tasks list
+         * @param taskName new task name
+         * @param taskDate new task date
+         * @param taskPlace new task place
+         * @param taskComment new task comment
+         */
         public void addTask(String taskName, LocalDate taskDate, String taskPlace, String taskComment) {
             int taskNumber = findMaxTaskNumber() + 1;
             Task task = new Task(taskNumber, taskName, taskDate, taskPlace, taskComment);
             addTask(task);
         }
 
+        /**
+         * Adds given task to user's tasks list
+         * @param task task to be added
+         */
         public void addTask(Task task) {
             String taskName = task.getTaskName();
             if (findTask(taskName) != null) {
                 System.out.println("Task with name " + taskName + " already exists. Cannot add task.");
-                return;
             } else {
                 User.this.tasksList.add(task);
                 System.out.println("Task added successfully. Task details:");
@@ -71,16 +83,172 @@ public class User {
             }
         }
 
-        private void printTableHead(){
-            System.out.println(tableBorder);
-            System.out.println(tableHeader);
-            System.out.println(tableBorder);
+        /**
+         * Mark task with given number as completed.
+         * @param taskNumber number of task to be marked as completed
+         */
+        public void completeTask(int taskNumber) {
+            Task task = findTask(taskNumber);
+            if(task != null){
+                System.out.printf("I have found task with number %d. Marking task as complete.%n", taskNumber);
+                task.completeTask();
+            } else {
+                System.out.printf("I haven't found task with number %d. No changes made.%n", taskNumber);
+            }
         }
 
-        private void printTableFoot() {
-            System.out.println(tableBorder);
+        /**
+         * Mark task with given name as completed
+         * @param taskName name of the task to be marked as completed
+         */
+        public void completeTask(String taskName) {
+            Task task = findTask(taskName);
+            if(task != null) {
+                System.out.printf("I have found task with name %s. Marking task as complete.%n", taskName);
+                task.completeTask();
+            } else {
+                System.out.printf("I haven't found task with number %s. No changes made.%n", taskName);
+            }
         }
 
+        /**
+         * Deletes the task with given number
+         * @param taskNumber number of the task to be deleted
+         */
+        public void deleteTask(int taskNumber) {
+            Iterator<Task> taskIterator = User.this.tasksList.iterator();
+            while(taskIterator.hasNext()) {
+                Task current = taskIterator.next();
+                if(current.getTaskNumber() == taskNumber) {
+                    System.out.printf("I have found task with number %d. Deleting task.%n", taskNumber);
+                    taskIterator.remove();
+                    return;
+                }
+            }
+            System.out.printf("I haven't found task with number %d. No tasks deleted.%n", taskNumber);
+        }
+
+        /**
+         * Deletes task with given name
+         * @param taskName name of the task to be deleted
+         */
+        public void deleteTask(String taskName) {
+            Iterator<Task> taskIterator = User.this.tasksList.iterator();
+            while(taskIterator.hasNext()) {
+                Task current = taskIterator.next();
+                if(current.getTaskName().equals(taskName)) {
+                    System.out.printf("I have found task with name %s. Deleting task.%n", taskName);
+                    taskIterator.remove();
+                    return;
+                }
+            }
+            System.out.printf("I haven't found task with name %s. No tasks deleted.%n", taskName);
+        }
+
+        /**
+         * Finds max task number
+         * @return the maximum value of task number in user's task list
+         */
+        private int findMaxTaskNumber() {
+            if(User.this.tasksList.size() == 0) return 0;
+
+            int maxValue = -1;
+            for(Task task : User.this.tasksList) {
+                int current = task.getTaskNumber();
+                if(current > maxValue) {
+                    maxValue = current;
+                }
+            }
+            return maxValue;
+        }
+
+        /**
+         * Find task with given number in user's tasks list
+         * @param taskNumber number of the task we want to find
+         * @return task if task exists in database, null if task is not found
+         */
+        private Task findTask(int taskNumber) {
+            for(Task task : User.this.tasksList) {
+                if(task.getTaskNumber() == taskNumber) {
+                    return task;
+                }
+            }
+            return null;
+        }
+
+        /**
+         * Find task with given name in user's tasks list
+         * @param taskName name of the task we want to find
+         * @return task if task exists in database, null if task is not found
+         */
+        private Task findTask(String taskName) {
+            for(Task task : User.this.tasksList) {
+                if(task.getTaskName().equals(taskName)) {
+                    return task;
+                }
+            }
+            return null;
+        }
+
+        /**
+         *  Loads user tasks from user tasks file to memory.
+         */
+        public void loadUserTasks() {
+            try (
+                    BufferedReader br = Files.newBufferedReader(userTasksFile)
+            ) {
+                String line;
+                while((line = br.readLine()) != null) {
+                    User.this.tasksList.add(Task.decodeTask(line));
+                }
+            } catch (IOException e) {e.printStackTrace();}
+        }
+
+        /**
+         * Modifies task with given name. Parameters to be modified: date, place, comment.
+         * @param taskName name of the task we want to modify
+         * @param taskDate new task date
+         * @param taskPlace new task place
+         * @param taskComment new task comment
+         * @return true if task was successfully modified, false otherwise
+         */
+        @SuppressWarnings("Duplicates")
+        public boolean modifyTask(String taskName, LocalDate taskDate, String taskPlace, String taskComment){
+            Task taskToBeModified = findTask(taskName);
+            if (taskToBeModified == null) {
+                System.out.println("Task not found, couldn't modify the task.");
+                return false;
+            }
+            taskToBeModified.setTaskDate(taskDate);
+            taskToBeModified.setTaskPlace(taskPlace);
+            taskToBeModified.setTaskComments(taskComment);
+            System.out.println("Task has been successfully modified: ");
+            System.out.println(taskToBeModified);
+            return true;
+        }
+
+        /**
+         * Modifies task with given number. Parameters to be modified: date, place, comment.
+         * @param taskNumber number of the task we want to modify
+         * @param taskDate new task date
+         * @param taskPlace new task place
+         * @param taskComment new task comment
+         * @return true if task was successfully modified, false otherwise
+         */
+        @SuppressWarnings("Duplicates")
+        public boolean modifyTask(int taskNumber, LocalDate taskDate, String taskPlace, String taskComment){
+            Task taskToBeModified = findTask(taskNumber);
+            if (taskToBeModified == null) {
+                System.out.println("Task not found, couldn't modify the task.");
+                return false;
+            }
+            taskToBeModified.setTaskDate(taskDate);
+            taskToBeModified.setTaskPlace(taskPlace);
+            taskToBeModified.setTaskComments(taskComment);
+            System.out.println("Task has been successfully modified: ");
+            System.out.println(taskToBeModified);
+            return true;
+        }
 
         /**
          *  Prints all tasks sorting by task number.
@@ -106,26 +274,20 @@ public class User {
             printTableFoot();
         }
 
-        public void loadUserTasks() {
-            try (
-                    BufferedReader br = Files.newBufferedReader(userTasksFile);
-            ) {
-                String line = "";
-                while((line = br.readLine()) != null) {
-                    User.this.tasksList.add(Task.decodeTask(line));
-                }
-            } catch (IOException e) {e.printStackTrace();}
+        /**
+         *  Print the header of the tasks table to console
+         */
+        private void printTableHead(){
+            System.out.println(tableBorder);
+            System.out.println(tableHeader);
+            System.out.println(tableBorder);
         }
 
-        public void saveUserTasks() {
-            try (
-                    BufferedWriter bw = Files.newBufferedWriter(userTasksFile);
-                    PrintWriter pw = new PrintWriter(bw);
-            ) {
-                for(Task task : User.this.tasksList) {
-                    pw.println(task);
-                }
-            } catch (IOException e) {e.printStackTrace();}
+        /**
+         *  Print the footer of the tasks table to console
+         */
+        private void printTableFoot() {
+            System.out.println(tableBorder);
         }
 
         /**
@@ -152,14 +314,10 @@ public class User {
             printTableFoot();
         }
 
-        public boolean taskExists(int taskNumber) {
-            return findTask(taskNumber) != null;
-        }
-
-        public boolean taskExists(String taskName) {
-            return findTask(taskName) != null;
-        }
-
+        /**
+         * Prints task with given number.
+         * @param taskNumber number of the task to be printed
+         */
         public void printTask(int taskNumber) {
             Task task = findTask(taskNumber);
             if(task != null) {
@@ -169,6 +327,10 @@ public class User {
             }
         }
 
+        /**
+         * Prints task with given name.
+         * @param taskName name of the task to be printed
+         */
         public void printTask(String taskName) {
             Task task = findTask(taskName);
             if(task != null) {
@@ -178,118 +340,36 @@ public class User {
             }
         }
 
-        private Task findTask(int taskNumber) {
-            for(Task task : User.this.tasksList) {
-                if(task.getTaskNumber() == taskNumber) {
-                    return task;
+        /**
+         *  Saves user's tasks list to user task file.
+         */
+        public void saveUserTasks() {
+            try (
+                    BufferedWriter bw = Files.newBufferedWriter(userTasksFile);
+                    PrintWriter pw = new PrintWriter(bw)
+            ) {
+                for(Task task : User.this.tasksList) {
+                    pw.println(task);
                 }
-            }
-            return null;
+            } catch (IOException e) {e.printStackTrace();}
         }
 
-        private Task findTask(String taskName) {
-            for(Task task : User.this.tasksList) {
-                if(task.getTaskName().equals(taskName)) {
-                    return task;
-                }
-            }
-            return null;
+        /**
+         * Check if task with given number exists.
+         * @param taskNumber search for the task using this task number.
+         * @return true if the task already exists, false otherwise.
+         */
+        public boolean taskExists(int taskNumber) {
+            return findTask(taskNumber) != null;
         }
 
-        public void deleteTask(int taskNumber) {
-            Iterator<Task> taskIterator = User.this.tasksList.iterator();
-            while(taskIterator.hasNext()) {
-                Task current = taskIterator.next();
-                if(current.getTaskNumber() == taskNumber) {
-                    System.out.printf("I have found task with number %d. Deleting task.%n", taskNumber);
-                    taskIterator.remove();
-                    return;
-                }
-            }
-            System.out.printf("I haven't found task with number %d. No tasks deleted.%n", taskNumber);
-            return;
-        }
-
-        public void completeTask(int taskNumber) {
-            Task task = findTask(taskNumber);
-            if(task != null){
-                System.out.printf("I have found task with number %d. Marking task as complete.%n", taskNumber);
-                task.completeTask();
-                return;
-            } else {
-                System.out.printf("I haven't found task with number %d. No changes made.%n", taskNumber);
-                return;
-            }
-        }
-
-        public void completeTask(String taskName) {
-            Task task = findTask(taskName);
-            if(task != null) {
-                System.out.printf("I have found task with name %s. Marking task as complete.%n", taskName);
-                task.completeTask();
-                return;
-            } else {
-                System.out.printf("I haven't found task with number %s. No changes made.%n", taskName);
-                return;
-            }
-        }
-
-
-        public void deleteTask(String taskName) {
-            Iterator<Task> taskIterator = User.this.tasksList.iterator();
-            while(taskIterator.hasNext()) {
-                Task current = taskIterator.next();
-                if(current.getTaskName().equals(taskName)) {
-                    System.out.printf("I have found task with name %s. Deleting task.%n", taskName);
-                    taskIterator.remove();
-                    return;
-                }
-            }
-            System.out.printf("I haven't found task with name %s. No tasks deleted.%n", taskName);
-            return;
-        }
-
-        private int findMaxTaskNumber() {
-            if(User.this.tasksList.size() == 0) return 0;
-
-            int maxValue = -1;
-            for(Task task : User.this.tasksList) {
-                int current = task.getTaskNumber();
-                if(current > maxValue) {
-                    maxValue = current;
-                }
-            }
-            return maxValue;
-        }
-
-        @SuppressWarnings("Duplicates")
-        public boolean modifyTask(String taskName, LocalDate taskDate, String taskPlace, String taskComment){
-            Task taskToBeModified = findTask(taskName);
-            if (taskToBeModified == null) {
-                System.out.println("Task not found, couldn't modify the task.");
-                return false;
-            }
-            taskToBeModified.setTaskDate(taskDate);
-            taskToBeModified.setTaskPlace(taskPlace);
-            taskToBeModified.setTaskComments(taskComment);
-            System.out.println("Task has been successfully modified: ");
-            System.out.println(taskToBeModified);
-            return true;
-        }
-
-        @SuppressWarnings("Duplicates")
-        public boolean modifyTask(int taskNumber, LocalDate taskDate, String taskPlace, String taskComment){
-            Task taskToBeModified = findTask(taskNumber);
-            if (taskToBeModified == null) {
-                System.out.println("Task not found, couldn't modify the task.");
-                return false;
-            }
-            taskToBeModified.setTaskDate(taskDate);
-            taskToBeModified.setTaskPlace(taskPlace);
-            taskToBeModified.setTaskComments(taskComment);
-            System.out.println("Task has been successfully modified: ");
-            System.out.println(taskToBeModified);
-            return true;
+        /**
+         * Check if task with given name exists.
+         * @param taskName search for the task using this task name.
+         * @return true if the task already exists, false otherwise.
+         */
+        public boolean taskExists(String taskName) {
+            return findTask(taskName) != null;
         }
 
     }

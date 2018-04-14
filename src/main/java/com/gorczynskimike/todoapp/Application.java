@@ -252,11 +252,6 @@ public class Application {
         return Integer.parseInt(taskNumber);
     }
 
-//    private static String getTaskName() {
-//        System.out.println("Enter the task name: ");
-//        return scanner.nextLine();
-//    }
-
     private static int getMenuChoice() {
 
         String menuChoice = scanner.nextLine();
