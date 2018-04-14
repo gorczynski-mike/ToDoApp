@@ -1,6 +1,6 @@
 [DONE] - [1] - [aSd] - [1999-04-04] - [asd] - [asd]
 [TODO] - [2] - [asd] - [1999-01-02] - [] - []
-[TODO] - [3] - [asdasd] - [1999-01-01] - [] - []
+[TODO] - [3] - [asdasd] - [1999-01-01] - [asd] - [asd]
 [TODO] - [4] - [asdasdasd] - [2018-04-13] - [place] - [comment]
 [TODO] - [5] - [asdasdd] - [2018-04-14] - [asddd] - [asd]
 [DONE] - [6] - [adasdasd] - [2018-04-14] - [asd] - [asd]

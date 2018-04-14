@@ -212,19 +212,13 @@ public class User {
          * @param taskComment new task comment
          * @return true if task was successfully modified, false otherwise
          */
-        @SuppressWarnings("Duplicates")
         public boolean modifyTask(String taskName, LocalDate taskDate, String taskPlace, String taskComment){
             Task taskToBeModified = findTask(taskName);
             if (taskToBeModified == null) {
                 System.out.println("Task not found, couldn't modify the task.");
                 return false;
             }
-            taskToBeModified.setTaskDate(taskDate);
-            taskToBeModified.setTaskPlace(taskPlace);
-            taskToBeModified.setTaskComments(taskComment);
-            System.out.println("Task has been successfully modified: ");
-            System.out.println(taskToBeModified);
-            return true;
+            return modifyTask(taskToBeModified, taskDate, taskPlace, taskComment);
         }
 
         /**
@@ -235,13 +229,16 @@ public class User {
          * @param taskComment new task comment
          * @return true if task was successfully modified, false otherwise
          */
-        @SuppressWarnings("Duplicates")
         public boolean modifyTask(int taskNumber, LocalDate taskDate, String taskPlace, String taskComment){
             Task taskToBeModified = findTask(taskNumber);
             if (taskToBeModified == null) {
                 System.out.println("Task not found, couldn't modify the task.");
                 return false;
             }
+            return modifyTask(taskToBeModified, taskDate, taskPlace, taskComment);
+        }
+
+        public boolean modifyTask(Task taskToBeModified, LocalDate taskDate, String taskPlace, String taskComment) {
             taskToBeModified.setTaskDate(taskDate);
             taskToBeModified.setTaskPlace(taskPlace);
             taskToBeModified.setTaskComments(taskComment);
