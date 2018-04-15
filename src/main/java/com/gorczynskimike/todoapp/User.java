@@ -1,15 +1,7 @@
 package com.gorczynskimike.todoapp;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.time.LocalDate;
-import java.util.*;
-import java.util.function.Function;
+import java.util.List;
+import java.util.ArrayList;
 
 @SuppressWarnings("WeakerAccess")
 public class User {
@@ -20,12 +12,12 @@ public class User {
 
     public User(String name) {
         this.name = name;
-        tasksList = new ArrayList<>();
-        tasksManager = new TasksManager(this, tasksList);
+        this.tasksList = new ArrayList<>();
+        this.tasksManager = new TasksManager(this, tasksList);
     }
 
     public TasksManager getTasksManager() {
-        return tasksManager;
+        return this.tasksManager;
     }
 
     public String getName() {
