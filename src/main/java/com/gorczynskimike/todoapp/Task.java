@@ -13,14 +13,17 @@ import java.time.LocalDate;
 @SuppressWarnings("WeakerAccess")
 public class Task{
 
+    /**
+     * Pattern used to decode task from file
+     */
     private static final Pattern taskItemPattern = Pattern.compile("\\[.*?\\]");
 
     private TaskStatus taskStatus = TaskStatus.TODO;
-    private int taskNumber = 123;
-    private String taskName = "name";
+    private int taskNumber;
+    private String taskName;
     private LocalDate taskDate;
-    private String taskPlace = "place";
-    private String taskComments = "comment";
+    private String taskPlace;
+    private String taskComments;
 
     public TaskStatus getTaskStatus() {
         return this.taskStatus;

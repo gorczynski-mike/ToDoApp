@@ -16,13 +16,18 @@ import java.util.function.Function;
 @SuppressWarnings("WeakerAccess")
 public class TasksManager {
 
+    // ------------------------------- FIELDS ------------------------------------------------ //
+
     private List<Task> tasksList;
     private User user;
     private final Path userTasksFile;
+
     private String tableHeader = String.format("| %s| %5s| %30s | %10s | %30s | %30s|",
             "status","number","name","date","place","comments");
     @SuppressWarnings("ReplaceAllDot")
     private String tableBorder = tableHeader.replaceAll(".","=");
+
+    // ------------------------------- CONSTRUCTORS ------------------------------------------ //
 
     public TasksManager(User user, List<Task> tasksList){
         this.user = user;
@@ -30,6 +35,8 @@ public class TasksManager {
         String userName = user.getName();
         userTasksFile = Paths.get("Users", userName + ".txt");
     }
+
+    // ------------------------------- METHODS ---------------------------------------------- //
 
     /**
      * Add task with given attributes to user's tasks list

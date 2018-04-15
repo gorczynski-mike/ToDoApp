@@ -9,12 +9,15 @@ import java.util.regex.Pattern;
 @SuppressWarnings("WeakerAccess")
 public class DataValidator {
 
+    //User patterns
     private static final Pattern userNamePattern = Pattern.compile("[a-zA-Z]+");
 
+    //Task patterns
     private static final Pattern taskNumberPattern = Pattern.compile("\\d+");
     private static final Pattern taskDatePattern = Pattern.compile("\\d{4}-\\d{1,2}-\\d{1,2}");
     private static final Pattern taskNamePattern = Pattern.compile(".*[\\S]+.*");
 
+    //Menu choices patterns
     private static final Pattern mainMenuChoicePattern = Pattern.compile("[0-7]|3[2-4]");
     private static final Pattern binaryUserChoicePattern = Pattern.compile("[12]");
 
