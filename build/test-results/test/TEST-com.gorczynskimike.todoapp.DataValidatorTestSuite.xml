@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.gorczynskimike.todoapp.DataValidatorTestSuite" tests="6" skipped="0" failures="0" errors="0" timestamp="2018-04-14T21:54:55" hostname="ann" time="0.01">
+<testsuite name="com.gorczynskimike.todoapp.DataValidatorTestSuite" tests="6" skipped="0" failures="0" errors="0" timestamp="2018-04-15T07:17:24" hostname="ann" time="0.008">
   <properties/>
-  <testcase name="testValidateMainMenuChoice" classname="com.gorczynskimike.todoapp.DataValidatorTestSuite" time="0.006"/>
+  <testcase name="testValidateMainMenuChoice" classname="com.gorczynskimike.todoapp.DataValidatorTestSuite" time="0.004"/>
   <testcase name="testValidateTaskNumber" classname="com.gorczynskimike.todoapp.DataValidatorTestSuite" time="0.0"/>
   <testcase name="testValidateBinaryUserChoice" classname="com.gorczynskimike.todoapp.DataValidatorTestSuite" time="0.001"/>
   <testcase name="testValidateTaskDate" classname="com.gorczynskimike.todoapp.DataValidatorTestSuite" time="0.0"/>

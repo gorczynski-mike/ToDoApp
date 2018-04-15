@@ -36,7 +36,7 @@ public class Application {
         UserManager.validateUserTasksFile(name);
 
         user = new User(name);
-        user.tasksManager.loadUserTasks();
+        user.getTasksManager().loadUserTasks();
 
         System.out.println("Press enter to continue.");
         scanner.nextLine();
@@ -51,27 +51,27 @@ public class Application {
             switch(menuChoice) {
                 case 1:
                     System.out.printf("%nYou have chosen: 1. Show me my tasks for today.%n%n");
-                    user.tasksManager.printAllTasksForToday();
+                    user.getTasksManager().printAllTasksForToday();
                     break;
                 case 2:
                     System.out.printf("%nYou have chosen: 2. Show me all my todo tasks.%n%n");
-                    user.tasksManager.printAllTodoTasks();
+                    user.getTasksManager().printAllTodoTasks();
                     break;
                 case 3:
                     System.out.printf("%nYou have chosen: 3. Show me all my finished tasks.%n%n");
-                    user.tasksManager.printAllDoneTasks();
+                    user.getTasksManager().printAllDoneTasks();
                     break;
                 case 32:
-                    System.out.printf("%nYou have chosen: 32. Show me my tasks.%n%n");
-                    user.tasksManager.printAllTasks(Task::getTaskNumber);
+                    System.out.printf("%nYou have chosen: 32. Show me my tasks, sort by task number.%n%n");
+                    user.getTasksManager().printAllTasks(Task::getTaskNumber);
                     break;
                 case 33:
                     System.out.printf("%nYou have chosen: 33. Show me my tasks, sort by task status.%n%n");
-                    user.tasksManager.printAllTasks(Task::getTaskStatus);
+                    user.getTasksManager().printAllTasks(Task::getTaskStatus);
                     break;
                 case 34:
-                    System.out.printf("%nYou have chosen: 34. Show me my tasks, sort by task status.%n%n");
-                    user.tasksManager.printAllTasks(Task::getTaskDate);
+                    System.out.printf("%nYou have chosen: 34. Show me my tasks, sort by task date.%n%n");
+                    user.getTasksManager().printAllTasks(Task::getTaskDate);
                     break;
                 case 4:
                     markAsCompleted();
@@ -100,17 +100,17 @@ public class Application {
     @SuppressWarnings("Duplicates")
     private static void modifyTask() {
         System.out.printf("%nYou have chosen: 6. Modify task.%n%n");
-        user.tasksManager.printAllTasksNumbersAndNames();
+        user.getTasksManager().printAllTasksNumbersAndNames();
         int userChoice = getBinaryUserChoice();
         boolean taskExists;
         switch(userChoice) {
             case 1:
                 System.out.println("Please type task number: ");
                 int taskNumber = getTaskNumber();
-                taskExists = user.tasksManager.taskExists(taskNumber);
+                taskExists = user.getTasksManager().taskExists(taskNumber);
                 if(taskExists) {
                     System.out.println("Task found in database, the following task will be modified: ");
-                    user.tasksManager.printTask(taskNumber);
+                    user.getTasksManager().printTask(taskNumber);
                     System.out.println("Please type new date of the task: ");
                     LocalDate newTaskDate = getTaskDate();
                     System.out.println("Please type new place of the task (optional, hit enter if you don't"
@@ -119,17 +119,17 @@ public class Application {
                     System.out.println("Please type new comment of the task (optional, hit enter if you don't"
                             + " wish to enter this info): ");
                     String newTaskComment = scanner.nextLine().trim();
-                    user.tasksManager.modifyTask(taskNumber,newTaskDate, newTaskPlace, newTaskComment);
+                    user.getTasksManager().modifyTask(taskNumber,newTaskDate, newTaskPlace, newTaskComment);
                 } else {
                     System.out.println("Task with number " + taskNumber + " not found in database, nothing modified.");
                 }
                 break;
             case 2:
                 String taskName = getTaskName();
-                taskExists = user.tasksManager.taskExists(taskName);
+                taskExists = user.getTasksManager().taskExists(taskName);
                 if(taskExists) {
                     System.out.println("Task found in database, the following task will be modified: ");
-                    user.tasksManager.printTask(taskName);
+                    user.getTasksManager().printTask(taskName);
                     System.out.println("Please type new date of the task: ");
                     LocalDate newTaskDate = getTaskDate();
                     System.out.println("Please type new place of the task (optional, hit enter if you don't"
@@ -138,7 +138,7 @@ public class Application {
                     System.out.println("Please type new comment of the task (optional, hit enter if you don't"
                             + "wish to enter this info): ");
                     String newTaskComment = scanner.nextLine().trim();
-                    user.tasksManager.modifyTask(taskName,newTaskDate, newTaskPlace, newTaskComment);
+                    user.getTasksManager().modifyTask(taskName,newTaskDate, newTaskPlace, newTaskComment);
                 } else {
                     System.out.println("Task with name " + taskName + " not found in database, nothing modified.");
                 }
@@ -199,7 +199,7 @@ public class Application {
         boolean taskNameIsValid = false;
         while(!taskNameIsValid) {
             taskName = getTaskName();
-            if(!user.tasksManager.taskExists(taskName)) {
+            if(!user.getTasksManager().taskExists(taskName)) {
                 taskNameIsValid = true;
             } else {
                 System.out.println("Task with name: " + taskName + " already exists, try again.");
@@ -213,23 +213,23 @@ public class Application {
         System.out.println("Please type the comment of the task (optional, hit enter if you don't"
                 + "wish to enter this info): ");
         String taskComment = getTaskComment();
-        user.tasksManager.addTask(taskName, taskLocalDate, taskPlace, taskComment);
+        user.getTasksManager().addTask(taskName, taskLocalDate, taskPlace, taskComment);
     }
 
     private static void deleteTask() {
         System.out.println("You have chosen: 7. Delete task.%n%n");
-        user.tasksManager.printAllTasksNumbersAndNames();
+        user.getTasksManager().printAllTasksNumbersAndNames();
         int userChoice = getBinaryUserChoice();
         switch(userChoice) {
             case 1:
                 System.out.println("Please type task number: ");
                 int taskNumber = getTaskNumber();
-                user.tasksManager.deleteTask(taskNumber);
+                user.getTasksManager().deleteTask(taskNumber);
                 break;
             case 2:
                 System.out.println("Please type task name: ");
                 String taskName = getTaskName();
-                user.tasksManager.deleteTask(taskName);
+                user.getTasksManager().deleteTask(taskName);
                 break;
             default:
                 System.err.println("Unrecognized user mini choice. This should never happen!");
@@ -239,18 +239,18 @@ public class Application {
 
     private static void markAsCompleted() {
         System.out.printf("%nYou have chosen: 4. Mark task as completed.%n ");
-        user.tasksManager.printAllTodoTasksNumbersAndNames();
+        user.getTasksManager().printAllTodoTasksNumbersAndNames();
         int userChoice = getBinaryUserChoice();
         switch(userChoice) {
             case 1:
                 System.out.println("Please type task number: ");
                 int taskNumber = getTaskNumber();
-                user.tasksManager.completeTask(taskNumber);
+                user.getTasksManager().completeTask(taskNumber);
                 break;
             case 2:
                 System.out.println("Please type task name: ");
                 String taskName = getTaskName();
-                user.tasksManager.completeTask(taskName);
+                user.getTasksManager().completeTask(taskName);
                 break;
             default:
                 System.err.println("Unrecognized user mini choice. This should never happen!");
@@ -301,7 +301,7 @@ public class Application {
         if(scanner != null) {
             scanner.close();
         }
-        user.tasksManager.saveUserTasks();
+        user.getTasksManager().saveUserTasks();
     }
 
 
