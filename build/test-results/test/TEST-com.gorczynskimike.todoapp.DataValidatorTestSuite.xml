@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.gorczynskimike.todoapp.DataValidatorTestSuite" tests="6" skipped="0" failures="0" errors="0" timestamp="2018-04-15T07:17:24" hostname="ann" time="0.008">
+<testsuite name="com.gorczynskimike.todoapp.DataValidatorTestSuite" tests="6" skipped="0" failures="0" errors="0" timestamp="2018-04-15T09:47:04" hostname="ann" time="0.013">
   <properties/>
-  <testcase name="testValidateMainMenuChoice" classname="com.gorczynskimike.todoapp.DataValidatorTestSuite" time="0.004"/>
+  <testcase name="testValidateMainMenuChoice" classname="com.gorczynskimike.todoapp.DataValidatorTestSuite" time="0.008"/>
   <testcase name="testValidateTaskNumber" classname="com.gorczynskimike.todoapp.DataValidatorTestSuite" time="0.0"/>
-  <testcase name="testValidateBinaryUserChoice" classname="com.gorczynskimike.todoapp.DataValidatorTestSuite" time="0.001"/>
+  <testcase name="testValidateBinaryUserChoice" classname="com.gorczynskimike.todoapp.DataValidatorTestSuite" time="0.0"/>
   <testcase name="testValidateTaskDate" classname="com.gorczynskimike.todoapp.DataValidatorTestSuite" time="0.0"/>
   <testcase name="testValidateTaskName" classname="com.gorczynskimike.todoapp.DataValidatorTestSuite" time="0.0"/>
-  <testcase name="testValidateUserName" classname="com.gorczynskimike.todoapp.DataValidatorTestSuite" time="0.001"/>
+  <testcase name="testValidateUserName" classname="com.gorczynskimike.todoapp.DataValidatorTestSuite" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

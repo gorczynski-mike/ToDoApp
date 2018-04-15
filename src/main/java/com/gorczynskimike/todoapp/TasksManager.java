@@ -20,7 +20,7 @@ public class TasksManager {
 
     private List<Task> tasksList;
     private User user;
-    private final Path userTasksFile;
+    private Path userTasksFile;
 
     private String tableHeader = String.format("| %s| %5s| %30s | %10s | %30s | %30s|",
             "status","number","name","date","place","comments");
@@ -56,6 +56,9 @@ public class TasksManager {
      * @param task task to be added
      */
     public void addTask(Task task) {
+        if(task == null) {
+            return;
+        }
         String taskName = task.getTaskName();
         if (findTask(taskName) != null) {
             System.out.println("Task with name " + taskName + " already exists. Cannot add task.");
@@ -71,7 +74,7 @@ public class TasksManager {
      * Mark task with given number as completed.
      * @param taskNumber number of task to be marked as completed
      */
-    public void completeTask(int taskNumber) {
+    public void completeTask(int taskNumber){
         Task task = findTask(taskNumber);
         if(task != null){
             System.out.printf("I have found task with number %d. Marking task as complete.%n", taskNumber);
@@ -87,6 +90,9 @@ public class TasksManager {
      * @param taskName name of the task to be marked as completed
      */
     public void completeTask(String taskName) {
+        if(taskName == null){
+            return;
+        }
         Task task = findTask(taskName);
         if(task != null) {
             System.out.printf("I have found task with name %s. Marking task as complete.%n", taskName);
@@ -122,6 +128,9 @@ public class TasksManager {
      * @param taskName name of the task to be deleted
      */
     public void deleteTask(String taskName) {
+        if(taskName == null){
+            return;
+        }
         Iterator<Task> taskIterator = tasksList.iterator();
         while(taskIterator.hasNext()) {
             Task current = taskIterator.next();
@@ -137,7 +146,7 @@ public class TasksManager {
 
     /**
      * Finds max task number
-     * @return the maximum value of task number in user's task list
+     * @return the maximum value of task number in user's task list, if there are no tasks -1 is returned
      */
     private int findMaxTaskNumber() {
         if(tasksList.size() == 0) return 0;
@@ -178,6 +187,42 @@ public class TasksManager {
             }
         }
         return null;
+    }
+
+    /**
+     * Return number of tasks
+     * @return number of tasks
+     */
+    public int getNumberOfTasks() {
+        return tasksList.size();
+    }
+
+    /**
+     * Return number of tasks with status 'to do'
+     * @return number of tasks
+     */
+    public int getNumberOfTodoTasks() {
+        int numberOfTodoTasks = 0;
+        for(Task task: tasksList){
+            if(task.getTaskStatus().equals(TaskStatus.TODO)) {
+                numberOfTodoTasks++;
+            }
+        }
+        return numberOfTodoTasks;
+    }
+
+    /**
+     * Return number of tasks with status 'done'
+     * @return number of tasks
+     */
+    public int getNumberOfDoneTasks() {
+        int numberOfTodoTasks = 0;
+        for(Task task: tasksList){
+            if(task.getTaskStatus().equals(TaskStatus.DONE)) {
+                numberOfTodoTasks++;
+            }
+        }
+        return numberOfTodoTasks;
     }
 
     /**
