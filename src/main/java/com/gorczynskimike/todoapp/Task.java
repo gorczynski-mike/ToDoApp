@@ -41,6 +41,14 @@ public class Task{
         return this.taskName;
     }
 
+    public String getTaskPlace() {
+        return taskPlace;
+    }
+
+    public String getTaskComments() {
+        return taskComments;
+    }
+
     public void setTaskDate(LocalDate taskDate) {
         this.taskDate = taskDate;
     }

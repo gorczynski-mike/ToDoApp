@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8082448-ae4a-4f60-9c61-8865cae393fe" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/FileDatabaseInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/FileDatabaseInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/ConsolePrinter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/Task.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/TasksManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/TasksManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/User.java" afterDir="false" />
     </list>
@@ -27,10 +28,9 @@
       <file leaf-file-name="TasksManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/TasksManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3367">
-              <caret line="232" column="16" selection-start-line="232" selection-start-column="16" selection-end-line="232" selection-end-column="16" />
+            <state relative-caret-position="63">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="e#1243#1244#0" expanded="true" />
                 <element signature="e#1301#1302#0" expanded="true" />
                 <element signature="e#6545#6546#0" expanded="true" />
@@ -39,8 +39,6 @@
                 <element signature="e#7510#7511#0" expanded="true" />
                 <element signature="e#9555#9556#0" expanded="true" />
                 <element signature="e#9605#9606#0" expanded="true" />
-                <element signature="e#11020#11021#0" expanded="true" />
-                <element signature="e#11067#11068#0" expanded="true" />
                 <element signature="e#13723#13724#0" expanded="true" />
                 <element signature="e#13797#13798#0" expanded="true" />
                 <element signature="e#14043#14044#0" expanded="true" />
@@ -52,11 +50,25 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="ConsolePrinter.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/ConsolePrinter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="101">
+              <caret line="29" column="51" selection-start-line="29" selection-start-column="51" selection-end-line="29" selection-end-column="51" />
+              <folding>
+                <element signature="e#249#283#0" expanded="true" />
+                <element signature="e#413#414#0" expanded="true" />
+                <element signature="e#460#461#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="30" column="41" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
+            <state relative-caret-position="351">
+              <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#842#843#0" expanded="true" />
@@ -105,7 +117,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Application.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Task.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/Task.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="903">
+              <caret line="43" column="34" selection-start-line="43" selection-start-column="34" selection-end-line="43" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#720#721#0" expanded="true" />
+                <element signature="e#758#759#0" expanded="true" />
+                <element signature="e#796#797#0" expanded="true" />
+                <element signature="e#827#828#0" expanded="true" />
+                <element signature="e#861#862#0" expanded="true" />
+                <element signature="e#899#900#0" expanded="true" />
+                <element signature="e#934#935#0" expanded="true" />
+                <element signature="e#970#971#0" expanded="true" />
+                <element signature="e#1038#1039#0" expanded="true" />
+                <element signature="e#1077#1078#0" expanded="true" />
+                <element signature="e#1112#1113#0" expanded="true" />
+                <element signature="e#1021#1022#0" expanded="true" />
+                <element signature="e#1061#1062#0" expanded="true" />
+                <element signature="e#1111#1112#0" expanded="true" />
+                <element signature="e#1153#1154#0" expanded="true" />
+                <element signature="e#1209#1210#0" expanded="true" />
+                <element signature="e#1257#1258#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Application.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/Application.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="362">
@@ -114,30 +155,6 @@
                 <element signature="imports" expanded="true" />
                 <element signature="e#476#477#0" expanded="true" />
                 <element signature="e#522#523#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserTestSuite.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/gorczynskimike/todoapp/UserTestSuite.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TaskTestSuite.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/gorczynskimike/todoapp/TaskTestSuite.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="693">
-              <caret line="36" column="86" selection-start-line="36" selection-start-column="86" selection-end-line="36" selection-end-column="86" />
-              <folding>
-                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -462,15 +479,16 @@
         <option value="$PROJECT_DIR$/src/test/java/com/gorczynskimike/todoapp/DataValidatorTestSuite.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/TaskManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/DataValidator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/Task.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/gorczynskimike/todoapp/UserTestSuite.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/gorczynskimike/todoapp/TaskStatusTestSuite.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/gorczynskimike/todoapp/TasksManagerTestSuite.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/DatabaseInterface.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/Application.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/TasksManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/FileDatabaseInterface.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/Task.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/TasksManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/ConsolePrinter.java" />
       </list>
     </option>
   </component>
@@ -758,7 +776,7 @@
       <workItem from="1523704807971" duration="17497000" />
       <workItem from="1523772603018" duration="40000" />
       <workItem from="1523775136565" duration="5809000" />
-      <workItem from="1523861542422" duration="5923000" />
+      <workItem from="1523861542422" duration="7422000" />
     </task>
     <servers />
   </component>
@@ -795,7 +813,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42673000" />
+    <option name="totallyTimeSpent" value="44172000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-9" width="1864" height="1098" extended-state="6" />
@@ -811,8 +829,8 @@
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32984293" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32984293" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32984293" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32984293" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18689057" />
@@ -845,16 +863,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/DataValidator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="14" column="90" selection-start-line="14" selection-start-column="90" selection-end-line="14" selection-end-column="90" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/gorczynskimike/todoapp/DataValidatorTestSuite.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -1196,30 +1204,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/Task.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1785">
-          <caret line="106" column="111" selection-start-line="106" selection-start-column="111" selection-end-line="106" selection-end-column="111" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#720#721#0" expanded="true" />
-            <element signature="e#758#759#0" expanded="true" />
-            <element signature="e#796#797#0" expanded="true" />
-            <element signature="e#827#828#0" expanded="true" />
-            <element signature="e#861#862#0" expanded="true" />
-            <element signature="e#899#900#0" expanded="true" />
-            <element signature="e#934#935#0" expanded="true" />
-            <element signature="e#970#971#0" expanded="true" />
-            <element signature="e#1021#1022#0" expanded="true" />
-            <element signature="e#1061#1062#0" expanded="true" />
-            <element signature="e#1111#1112#0" expanded="true" />
-            <element signature="e#1153#1154#0" expanded="true" />
-            <element signature="e#1209#1210#0" expanded="true" />
-            <element signature="e#1257#1258#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/TaskStatus.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
@@ -1287,18 +1271,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="30" column="41" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#842#843#0" expanded="true" />
-            <element signature="e#889#890#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/DatabaseInterface.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
@@ -1322,12 +1294,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/TasksManager.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3367">
-          <caret line="232" column="16" selection-start-line="232" selection-start-column="16" selection-end-line="232" selection-end-column="16" />
+        <state relative-caret-position="362">
+          <caret line="41" column="26" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#476#477#0" expanded="true" />
+            <element signature="e#522#523#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#842#843#0" expanded="true" />
+            <element signature="e#889#890#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/Task.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="903">
+          <caret line="43" column="34" selection-start-line="43" selection-start-column="34" selection-end-line="43" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#720#721#0" expanded="true" />
+            <element signature="e#758#759#0" expanded="true" />
+            <element signature="e#796#797#0" expanded="true" />
+            <element signature="e#827#828#0" expanded="true" />
+            <element signature="e#861#862#0" expanded="true" />
+            <element signature="e#899#900#0" expanded="true" />
+            <element signature="e#934#935#0" expanded="true" />
+            <element signature="e#970#971#0" expanded="true" />
+            <element signature="e#1038#1039#0" expanded="true" />
+            <element signature="e#1077#1078#0" expanded="true" />
+            <element signature="e#1112#1113#0" expanded="true" />
+            <element signature="e#1021#1022#0" expanded="true" />
+            <element signature="e#1061#1062#0" expanded="true" />
+            <element signature="e#1111#1112#0" expanded="true" />
+            <element signature="e#1153#1154#0" expanded="true" />
+            <element signature="e#1209#1210#0" expanded="true" />
+            <element signature="e#1257#1258#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/TasksManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <folding>
             <element signature="e#1243#1244#0" expanded="true" />
             <element signature="e#1301#1302#0" expanded="true" />
             <element signature="e#6545#6546#0" expanded="true" />
@@ -1336,8 +1358,6 @@
             <element signature="e#7510#7511#0" expanded="true" />
             <element signature="e#9555#9556#0" expanded="true" />
             <element signature="e#9605#9606#0" expanded="true" />
-            <element signature="e#11020#11021#0" expanded="true" />
-            <element signature="e#11067#11068#0" expanded="true" />
             <element signature="e#13723#13724#0" expanded="true" />
             <element signature="e#13797#13798#0" expanded="true" />
             <element signature="e#14043#14044#0" expanded="true" />
@@ -1348,14 +1368,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/Application.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gorczynskimike/todoapp/ConsolePrinter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="41" column="26" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
+        <state relative-caret-position="101">
+          <caret line="29" column="51" selection-start-line="29" selection-start-column="51" selection-end-line="29" selection-end-column="51" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#476#477#0" expanded="true" />
-            <element signature="e#522#523#0" expanded="true" />
+            <element signature="e#249#283#0" expanded="true" />
+            <element signature="e#413#414#0" expanded="true" />
+            <element signature="e#460#461#0" expanded="true" />
           </folding>
         </state>
       </provider>

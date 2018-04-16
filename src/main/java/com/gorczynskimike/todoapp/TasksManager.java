@@ -5,6 +5,7 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 
 @SuppressWarnings("WeakerAccess")
 public class TasksManager {
@@ -14,11 +15,8 @@ public class TasksManager {
     private List<Task> tasksList;
     private User user;
     private DatabaseInterface databaseInterface;
+    private ConsolePrinter consolePrinter = new ConsolePrinter();
 
-    private String tableHeader = String.format("| %s| %5s| %30s | %10s | %30s | %30s|",
-            "status","number","name","date","place","comments");
-    @SuppressWarnings("ReplaceAllDot")
-    private String tableBorder = tableHeader.replaceAll(".","=");
 
     // ------------------------------- CONSTRUCTORS ------------------------------------------ //
 
@@ -292,52 +290,33 @@ public class TasksManager {
      * @param <U>
      */
     public <U extends Comparable<? super U>> void printAllTasks(Function<? super Task, ? extends U> keyExtractor) {
-        printTableHead();
-        tasksList.stream()
+        List<Task> taskToBePrinted =  tasksList.stream()
                 .sorted(Comparator.comparing(keyExtractor))
-                .forEach(task -> System.out.println(task.getConsoleStringRepresentation()));
-        printTableFoot();
+                .collect(Collectors.toList());
+        consolePrinter.printTasks(taskToBePrinted);
     }
 
     /**
      *  Prints all tasks for today, sorting first by task status, then by task number.
      */
     public void printAllTasksForToday() {
-        LocalDate today = LocalDate.now();
-        printTableHead();
-        tasksList.stream()
-                .filter( task -> task.getTaskDate().equals(today))
+        List<Task> taskToBePrinted =  tasksList.stream()
+                .filter( task -> task.getTaskDate().equals(LocalDate.now()))
                 .sorted(Comparator.comparing(Task::getTaskStatus).thenComparing(Task::getTaskNumber))
-                .forEach(task -> System.out.println(task.getConsoleStringRepresentation()));
-        printTableFoot();
+                .collect(Collectors.toList());
+        consolePrinter.printTasks(taskToBePrinted);
     }
 
-    /**
-     *  Print the header of the tasks table to console
-     */
-    private void printTableHead(){
-        System.out.println(tableBorder);
-        System.out.println(tableHeader);
-        System.out.println(tableBorder);
-    }
-
-    /**
-     *  Print the footer of the tasks table to console
-     */
-    private void printTableFoot() {
-        System.out.println(tableBorder);
-    }
 
     /**
      *  Prints all tasks to do chronologically
      */
     public void printAllTodoTasks() {
-        printTableHead();
-        tasksList.stream()
+        List<Task> taskToBePrinted =  tasksList.stream()
                 .filter(task -> task.getTaskStatus().equals(TaskStatus.TODO))
                 .sorted(Comparator.comparing(Task::getTaskDate))
-                .forEach(task -> System.out.println(task.getConsoleStringRepresentation()));
-        printTableFoot();
+                .collect(Collectors.toList());
+        consolePrinter.printTasks(taskToBePrinted);
     }
 
     /**
@@ -367,12 +346,11 @@ public class TasksManager {
      *  Prints all finished tasks chronologically
      */
     public void printAllDoneTasks() {
-        printTableHead();
-        tasksList.stream()
+        List<Task> taskToBePrinted =  tasksList.stream()
                 .filter(task -> task.getTaskStatus().equals(TaskStatus.DONE))
                 .sorted(Comparator.comparing(Task::getTaskDate))
-                .forEach(task -> System.out.println(task.getConsoleStringRepresentation()));
-        printTableFoot();
+                .collect(Collectors.toList());
+        consolePrinter.printTasks(taskToBePrinted);
     }
 
     /**
