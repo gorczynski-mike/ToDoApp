@@ -15,6 +15,11 @@ public class User {
         this.tasksList = new ArrayList<>();
         this.tasksManager = new TasksManager(this, tasksList);
     }
+    public User(String name, List<Task> tasksList) {
+        this.name = name;
+        this.tasksList = tasksList;
+        this.tasksManager = new TasksManager(this, tasksList);
+    }
 
     public User(String name, TasksManager tasksManager) {
         this.name = name;

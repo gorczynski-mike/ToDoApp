@@ -7,18 +7,20 @@ public class Application {
 
     private static Scanner scanner = new Scanner(System.in);
     private static User user;
+    private static DatabaseInterface databaseInterface = new FileDatabaseInterface();
 
     public static void main(String[] args) {
-
-        UserManager.initialize();
-
-        greetUser();
+        startProgram();
+        loadUser();
         mainLoop();
         exitProgram();
-
     }
 
-    private static void greetUser() {
+    private static void startProgram() {
+        databaseInterface.initialize();
+    }
+
+    private static void loadUser() {
         System.out.println("Hello user, what is your name?");
         String name = scanner.nextLine();
         while(!DataValidator.validateUserName(name)) {
@@ -26,16 +28,15 @@ public class Application {
             name = scanner.nextLine();
         }
         System.out.println("Your name is: " + name);
-        if(!UserManager.userExists(name)) {
+        if(!databaseInterface.userExists(name)) {
             System.out.printf("I haven't found you in the database %s, creating new user.%n", name);
-            UserManager.createUser(name.toLowerCase());
+            user = databaseInterface.createUser(name.toLowerCase());
             System.out.println("New user created.");
         } else {
             System.out.printf("I have found you in the database %s. Hello again.%n", name);
+            user = databaseInterface.loadUser(name);
         }
-        UserManager.validateUserTasksFile(name);
 
-        user = new User(name);
         user.getTasksManager().loadUserTasks();
 
         System.out.println("Press enter to continue.");
@@ -302,6 +303,7 @@ public class Application {
             scanner.close();
         }
         user.getTasksManager().saveUserTasks();
+        databaseInterface.cleanup();
     }
 
 

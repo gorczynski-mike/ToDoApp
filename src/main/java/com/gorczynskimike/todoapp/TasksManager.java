@@ -1,12 +1,5 @@
 package com.gorczynskimike.todoapp;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.Comparator;
 import java.util.Iterator;
@@ -31,8 +24,8 @@ public class TasksManager {
 
     public TasksManager(User user, List<Task> tasksList){
         this.user = user;
-        this.tasksList = tasksList;
         databaseInterface = new FileDatabaseInterface();
+        this.tasksList = tasksList;
     }
 
     public TasksManager(User user){
