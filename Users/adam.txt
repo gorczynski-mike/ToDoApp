@@ -9,3 +9,4 @@
 [TODO] - [11] - [asdddaa] - [2018-06-17] - [fds] - [fsdf]
 [TODO] - [12] - [zrobic porzadek w szufladzie] - [2018-04-20] - [dom] - [komentarz szuflada]
 [TODO] - [13] - [task nameeeee] - [2018-04-15] - [dom] - [w domu]
+[TODO] - [14] - [nowe zadanie test] - [2018-04-16] - [place 2018-04-16] - [comment 2018-04-16]

@@ -34,6 +34,10 @@ public class TasksManager {
         this.tasksList = databaseInterface.loadUserTasks(user);
     }
 
+    public TasksManager(DatabaseInterface databaseInterface) {
+        this.databaseInterface = databaseInterface;
+    }
+
     // ------------------------------- METHODS ---------------------------------------------- //
 
     /**
@@ -395,6 +399,12 @@ public class TasksManager {
         } else {
             System.out.println("Task with name " + taskName + " not found in database");
         }
+    }
+
+    public void registerUser(User user){
+        this.user = user;
+        user.registerTasksManager(this);
+        loadUserTasks();
     }
 
     /**

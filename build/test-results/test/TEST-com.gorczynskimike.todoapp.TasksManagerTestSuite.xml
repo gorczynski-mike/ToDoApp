@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.gorczynskimike.todoapp.TasksManagerTestSuite" tests="11" skipped="0" failures="0" errors="0" timestamp="2018-04-16T08:06:08" hostname="ann" time="0.214">
+<testsuite name="com.gorczynskimike.todoapp.TasksManagerTestSuite" tests="11" skipped="0" failures="0" errors="0" timestamp="2018-04-16T08:41:59" hostname="ann" time="0.118">
   <properties/>
-  <testcase name="testDeleteTaskByTaskNumber" classname="com.gorczynskimike.todoapp.TasksManagerTestSuite" time="0.102"/>
-  <testcase name="testAddTask" classname="com.gorczynskimike.todoapp.TasksManagerTestSuite" time="0.009"/>
-  <testcase name="testAddTaskAlreadyExisting" classname="com.gorczynskimike.todoapp.TasksManagerTestSuite" time="0.009"/>
-  <testcase name="testNewTaskHasStatusToDo" classname="com.gorczynskimike.todoapp.TasksManagerTestSuite" time="0.009"/>
-  <testcase name="testDeleteTaskByTaskName" classname="com.gorczynskimike.todoapp.TasksManagerTestSuite" time="0.021"/>
-  <testcase name="testCompleteTaskNotExisting" classname="com.gorczynskimike.todoapp.TasksManagerTestSuite" time="0.009"/>
-  <testcase name="testTaskListForNewUserIsEmpty" classname="com.gorczynskimike.todoapp.TasksManagerTestSuite" time="0.002"/>
-  <testcase name="testCompleteTaskByName" classname="com.gorczynskimike.todoapp.TasksManagerTestSuite" time="0.019"/>
-  <testcase name="testAddNullTask" classname="com.gorczynskimike.todoapp.TasksManagerTestSuite" time="0.002"/>
-  <testcase name="testCompleteNullTask" classname="com.gorczynskimike.todoapp.TasksManagerTestSuite" time="0.013"/>
-  <testcase name="testCompleteTaskByNumber" classname="com.gorczynskimike.todoapp.TasksManagerTestSuite" time="0.015"/>
+  <testcase name="testDeleteTaskByTaskNumber" classname="com.gorczynskimike.todoapp.TasksManagerTestSuite" time="0.058"/>
+  <testcase name="testAddTask" classname="com.gorczynskimike.todoapp.TasksManagerTestSuite" time="0.005"/>
+  <testcase name="testAddTaskAlreadyExisting" classname="com.gorczynskimike.todoapp.TasksManagerTestSuite" time="0.004"/>
+  <testcase name="testNewTaskHasStatusToDo" classname="com.gorczynskimike.todoapp.TasksManagerTestSuite" time="0.006"/>
+  <testcase name="testDeleteTaskByTaskName" classname="com.gorczynskimike.todoapp.TasksManagerTestSuite" time="0.012"/>
+  <testcase name="testCompleteTaskNotExisting" classname="com.gorczynskimike.todoapp.TasksManagerTestSuite" time="0.005"/>
+  <testcase name="testTaskListForNewUserIsEmpty" classname="com.gorczynskimike.todoapp.TasksManagerTestSuite" time="0.001"/>
+  <testcase name="testCompleteTaskByName" classname="com.gorczynskimike.todoapp.TasksManagerTestSuite" time="0.008"/>
+  <testcase name="testAddNullTask" classname="com.gorczynskimike.todoapp.TasksManagerTestSuite" time="0.0"/>
+  <testcase name="testCompleteNullTask" classname="com.gorczynskimike.todoapp.TasksManagerTestSuite" time="0.005"/>
+  <testcase name="testCompleteTaskByNumber" classname="com.gorczynskimike.todoapp.TasksManagerTestSuite" time="0.007"/>
   <system-out><![CDATA[TasksManager Test Suite: start
 
 Test #1 : testDeleteTaskByTaskNumber : start

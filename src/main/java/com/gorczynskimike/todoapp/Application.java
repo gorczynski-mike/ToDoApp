@@ -35,9 +35,11 @@ public class Application {
         } else {
             System.out.printf("I have found you in the database %s. Hello again.%n", name);
             user = databaseInterface.loadUser(name);
+            System.out.println("User loaded.");
         }
 
-        user.getTasksManager().loadUserTasks();
+        TasksManager tasksManager = new TasksManager(databaseInterface);
+        tasksManager.registerUser(user);
 
         System.out.println("Press enter to continue.");
         scanner.nextLine();
@@ -116,10 +118,10 @@ public class Application {
                     LocalDate newTaskDate = getTaskDate();
                     System.out.println("Please type new place of the task (optional, hit enter if you don't"
                             + " wish to enter this info): ");
-                    String newTaskPlace = scanner.nextLine().trim();
+                    String newTaskPlace = getTaskPlace();
                     System.out.println("Please type new comment of the task (optional, hit enter if you don't"
                             + " wish to enter this info): ");
-                    String newTaskComment = scanner.nextLine().trim();
+                    String newTaskComment = getTaskComment();
                     user.getTasksManager().modifyTask(taskNumber,newTaskDate, newTaskPlace, newTaskComment);
                 } else {
                     System.out.println("Task with number " + taskNumber + " not found in database, nothing modified.");
@@ -135,10 +137,10 @@ public class Application {
                     LocalDate newTaskDate = getTaskDate();
                     System.out.println("Please type new place of the task (optional, hit enter if you don't"
                             + "wish to enter this info): ");
-                    String newTaskPlace = scanner.nextLine().trim();
+                    String newTaskPlace = getTaskPlace();
                     System.out.println("Please type new comment of the task (optional, hit enter if you don't"
                             + "wish to enter this info): ");
-                    String newTaskComment = scanner.nextLine().trim();
+                    String newTaskComment = getTaskComment();
                     user.getTasksManager().modifyTask(taskName,newTaskDate, newTaskPlace, newTaskComment);
                 } else {
                     System.out.println("Task with name " + taskName + " not found in database, nothing modified.");

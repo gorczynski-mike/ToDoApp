@@ -19,17 +19,7 @@ public class FileDatabaseInterface implements DatabaseInterface{
 
     @Override
     public List<Task> loadUserTasks(User user) {
-        Path userTasksFile = getUserTasksFile(user);
-        List<Task> userTasks = new ArrayList<>();
-        try (
-                BufferedReader br = Files.newBufferedReader(userTasksFile)
-        ) {
-            String line;
-            while((line = br.readLine()) != null) {
-                userTasks.add(Task.decodeTask(line));
-            }
-        } catch (IOException e) {e.printStackTrace();}
-        return userTasks;
+        return loadUserTasks(user.getName());
     }
 
     private List<Task> loadUserTasks(String userName) {

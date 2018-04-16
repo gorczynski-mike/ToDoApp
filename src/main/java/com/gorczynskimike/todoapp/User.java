@@ -27,6 +27,10 @@ public class User {
         this.tasksManager = tasksManager;
     }
 
+    public void registerTasksManager(TasksManager tasksManager){
+        this.tasksManager = tasksManager;
+    }
+
     public TasksManager getTasksManager() {
         return this.tasksManager;
     }
