@@ -26,12 +26,6 @@ public class TasksManager {
         this.tasksList = tasksList;
     }
 
-    public TasksManager(User user){
-        this.user = user;
-        databaseInterface = new FileDatabaseInterface();
-        this.tasksList = databaseInterface.loadUserTasks(user);
-    }
-
     public TasksManager(DatabaseInterface databaseInterface) {
         this.databaseInterface = databaseInterface;
     }
@@ -278,13 +272,6 @@ public class TasksManager {
     }
 
     /**
-     *  Convenience no argument printAllTasks() method.
-     */
-    public void printAllTasks() {
-        printAllTasks(Task::getTaskNumber);
-    }
-
-    /**
      * Prints all tasks sorting according to used KeyExtractor
      * @param keyExtractor the tasks will be sorted according to this keyExtractor
      * @param <U>
@@ -325,8 +312,9 @@ public class TasksManager {
      */
     public void printAllTasksNumbersAndNames() {
         System.out.print("All tasks [number:name]: ");
-        tasksList.stream()
-                .forEach(task -> System.out.printf("[%s:%s], ",task.getTaskNumber(), task.getTaskName()));
+        for(Task task : tasksList) {
+            System.out.printf("[%s:%s], ", task.getTaskNumber(), task.getTaskName());
+        }
         System.out.println();
     }
 

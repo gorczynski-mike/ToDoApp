@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.gorczynskimike.todoapp.DataValidatorTestSuite" tests="6" skipped="0" failures="0" errors="0" timestamp="2018-04-16T09:06:42" hostname="ann" time="0.006">
+<testsuite name="com.gorczynskimike.todoapp.DataValidatorTestSuite" tests="6" skipped="0" failures="0" errors="0" timestamp="2018-04-16T10:14:55" hostname="ann" time="0.006">
   <properties/>
   <testcase name="testValidateMainMenuChoice" classname="com.gorczynskimike.todoapp.DataValidatorTestSuite" time="0.004"/>
   <testcase name="testValidateTaskNumber" classname="com.gorczynskimike.todoapp.DataValidatorTestSuite" time="0.0"/>

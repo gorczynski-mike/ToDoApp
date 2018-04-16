@@ -101,20 +101,6 @@ public class FileDatabaseInterface implements DatabaseInterface{
         return user;
     }
 
-    public static void createUser(User user) {
-        validateUsersFile();
-        try (
-                BufferedWriter bw = Files.newBufferedWriter(usersFile, StandardOpenOption.APPEND);
-                PrintWriter pw = new PrintWriter(bw)
-        ) {
-            pw.println(user);
-            Files.createFile(Paths.get(usersFolder.toString(), user.getName().toLowerCase() + ".txt"));
-            usersList.add(user);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
     @Override
     public User createUser(String userName) {
         validateUsersFile();
@@ -168,12 +154,8 @@ public class FileDatabaseInterface implements DatabaseInterface{
         }
     }
 
-    public static void validateUserTasksFile(User user) throws IllegalStateException {
-        Path userTasksFile = Paths.get(usersFolder.toString(), user.getName() + ".txt");
-        if(!Files.exists(userTasksFile)) {
-            throw new IllegalStateException("Could not find user's tasks file.");
-        }
-        System.out.printf("%s, your tasks file is present.%n", user.getName());
+    public void validateUserTasksFile(User user) throws IllegalStateException {
+        validateUserTasksFile(user.getName());
     }
 
     private void validateUserTasksFile(String userName) throws IllegalStateException {
