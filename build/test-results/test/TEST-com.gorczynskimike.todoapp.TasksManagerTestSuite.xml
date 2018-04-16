@@ -1,56 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.gorczynskimike.todoapp.TasksManagerTestSuite" tests="11" skipped="0" failures="0" errors="0" timestamp="2018-04-15T09:47:04" hostname="ann" time="0.117">
+<testsuite name="com.gorczynskimike.todoapp.TasksManagerTestSuite" tests="11" skipped="0" failures="0" errors="0" timestamp="2018-04-16T07:24:07" hostname="ann" time="0.171">
   <properties/>
-  <testcase name="testDeleteTaskByTaskNumber" classname="com.gorczynskimike.todoapp.TasksManagerTestSuite" time="0.072"/>
-  <testcase name="testAddTask" classname="com.gorczynskimike.todoapp.TasksManagerTestSuite" time="0.005"/>
-  <testcase name="testAddTaskAlreadyExisting" classname="com.gorczynskimike.todoapp.TasksManagerTestSuite" time="0.004"/>
+  <testcase name="testDeleteTaskByTaskNumber" classname="com.gorczynskimike.todoapp.TasksManagerTestSuite" time="0.112"/>
+  <testcase name="testAddTask" classname="com.gorczynskimike.todoapp.TasksManagerTestSuite" time="0.007"/>
+  <testcase name="testAddTaskAlreadyExisting" classname="com.gorczynskimike.todoapp.TasksManagerTestSuite" time="0.005"/>
   <testcase name="testNewTaskHasStatusToDo" classname="com.gorczynskimike.todoapp.TasksManagerTestSuite" time="0.005"/>
-  <testcase name="testDeleteTaskByTaskName" classname="com.gorczynskimike.todoapp.TasksManagerTestSuite" time="0.007"/>
+  <testcase name="testDeleteTaskByTaskName" classname="com.gorczynskimike.todoapp.TasksManagerTestSuite" time="0.008"/>
   <testcase name="testCompleteTaskNotExisting" classname="com.gorczynskimike.todoapp.TasksManagerTestSuite" time="0.004"/>
-  <testcase name="testTaskListForNewUserIsEmpty" classname="com.gorczynskimike.todoapp.TasksManagerTestSuite" time="0.002"/>
-  <testcase name="testCompleteTaskByName" classname="com.gorczynskimike.todoapp.TasksManagerTestSuite" time="0.005"/>
-  <testcase name="testAddNullTask" classname="com.gorczynskimike.todoapp.TasksManagerTestSuite" time="0.002"/>
-  <testcase name="testCompleteNullTask" classname="com.gorczynskimike.todoapp.TasksManagerTestSuite" time="0.004"/>
-  <testcase name="testCompleteTaskByNumber" classname="com.gorczynskimike.todoapp.TasksManagerTestSuite" time="0.005"/>
+  <testcase name="testTaskListForNewUserIsEmpty" classname="com.gorczynskimike.todoapp.TasksManagerTestSuite" time="0.001"/>
+  <testcase name="testCompleteTaskByName" classname="com.gorczynskimike.todoapp.TasksManagerTestSuite" time="0.007"/>
+  <testcase name="testAddNullTask" classname="com.gorczynskimike.todoapp.TasksManagerTestSuite" time="0.003"/>
+  <testcase name="testCompleteNullTask" classname="com.gorczynskimike.todoapp.TasksManagerTestSuite" time="0.005"/>
+  <testcase name="testCompleteTaskByNumber" classname="com.gorczynskimike.todoapp.TasksManagerTestSuite" time="0.007"/>
   <system-out><![CDATA[TasksManager Test Suite: start
 
 Test #1 : testDeleteTaskByTaskNumber : start
 Task added successfully. Task details:
-[TODO] - [1] - [1] - [2018-04-15] - [1] - [1]
+[TODO] - [1] - [1] - [2018-04-16] - [1] - [1]
 Task added successfully. Task details:
-[TODO] - [2] - [2] - [2018-04-15] - [2] - [2]
+[TODO] - [2] - [2] - [2018-04-16] - [2] - [2]
 I have found task with number 2. Deleting following task:
-[TODO] - [2] - [2] - [2018-04-15] - [2] - [2]
+[TODO] - [2] - [2] - [2018-04-16] - [2] - [2]
 Task deleted.
 Test #1 : testDeleteTaskByTaskNumber : end
 
 Test #2 : testAddTask : start
 Task added successfully. Task details:
-[TODO] - [1] - [1] - [2018-04-15] - [1] - [1]
+[TODO] - [1] - [1] - [2018-04-16] - [1] - [1]
 Test #2 : testAddTask : end
 
 Test #3 : testAddTaskAlreadyExisting : start
 Task added successfully. Task details:
-[TODO] - [1] - [1] - [2018-04-15] - [1] - [1]
+[TODO] - [1] - [1] - [2018-04-16] - [1] - [1]
 Task with name 1 already exists. Cannot add task.
 Test #3 : testAddTaskAlreadyExisting : end
 
 Test #4 : testNewTaskHasStatusToDo : start
 Task added successfully. Task details:
-[TODO] - [1] - [1] - [2018-04-15] - [1] - [1]
+[TODO] - [1] - [1] - [2018-04-16] - [1] - [1]
 Test #4 : testNewTaskHasStatusToDo : end
 
 Test #5 : testDeleteTaskByTaskName : start
 Task added successfully. Task details:
-[TODO] - [1] - [name1] - [2018-04-15] - [1] - [1]
+[TODO] - [1] - [name1] - [2018-04-16] - [1] - [1]
 Task added successfully. Task details:
-[TODO] - [2] - [name2] - [2018-04-15] - [2] - [2]
+[TODO] - [2] - [name2] - [2018-04-16] - [2] - [2]
 I have found task with name name2. Deleting task.
 Test #5 : testDeleteTaskByTaskName : end
 
 Test #6 : testCompleteTaskNotExisting : start
 Task added successfully. Task details:
-[TODO] - [1] - [1] - [2018-04-15] - [1] - [1]
+[TODO] - [1] - [1] - [2018-04-16] - [1] - [1]
 I haven't found task with number 2. No changes made.
 Test #6 : testCompleteTaskNotExisting : end
 
@@ -59,7 +59,7 @@ Test #7 : testTaskListForNewUserIsEmpty : end
 
 Test #8 : testCompleteTaskByName : start
 Task added successfully. Task details:
-[TODO] - [1] - [name] - [2018-04-15] - [1] - [1]
+[TODO] - [1] - [name] - [2018-04-16] - [1] - [1]
 I have found task with name name. Marking task as complete.
 Test #8 : testCompleteTaskByName : end
 
@@ -68,12 +68,12 @@ Test #9 : testAddNullTask : end
 
 Test #10 : testCompleteNullTask : start
 Task added successfully. Task details:
-[TODO] - [1] - [1] - [2018-04-15] - [1] - [1]
+[TODO] - [1] - [1] - [2018-04-16] - [1] - [1]
 Test #10 : testCompleteNullTask : end
 
 Test #11 : testCompleteTaskByNumber : start
 Task added successfully. Task details:
-[TODO] - [1] - [1] - [2018-04-15] - [1] - [1]
+[TODO] - [1] - [1] - [2018-04-16] - [1] - [1]
 I have found task with number 1. Marking task as complete.
 Test #11 : testCompleteTaskByNumber : end
 

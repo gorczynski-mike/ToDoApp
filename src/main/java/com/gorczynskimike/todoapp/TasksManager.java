@@ -20,7 +20,7 @@ public class TasksManager {
 
     private List<Task> tasksList;
     private User user;
-    private Path userTasksFile;
+    private DatabaseInterface databaseInterface;
 
     private String tableHeader = String.format("| %s| %5s| %30s | %10s | %30s | %30s|",
             "status","number","name","date","place","comments");
@@ -32,8 +32,13 @@ public class TasksManager {
     public TasksManager(User user, List<Task> tasksList){
         this.user = user;
         this.tasksList = tasksList;
-        String userName = user.getName();
-        userTasksFile = Paths.get("Users", userName + ".txt");
+        databaseInterface = new FileDatabaseInterface();
+    }
+
+    public TasksManager(User user){
+        this.user = user;
+        databaseInterface = new FileDatabaseInterface();
+        this.tasksList = databaseInterface.loadUserTasks(user);
     }
 
     // ------------------------------- METHODS ---------------------------------------------- //
@@ -229,14 +234,7 @@ public class TasksManager {
      *  Loads user tasks from user tasks file to memory.
      */
     public void loadUserTasks() {
-        try (
-                BufferedReader br = Files.newBufferedReader(userTasksFile)
-        ) {
-            String line;
-            while((line = br.readLine()) != null) {
-                tasksList.add(Task.decodeTask(line));
-            }
-        } catch (IOException e) {e.printStackTrace();}
+        this.tasksList = databaseInterface.loadUserTasks(this.user);
     }
 
     /**
@@ -410,14 +408,7 @@ public class TasksManager {
      *  Saves user's tasks list to user task file.
      */
     public void saveUserTasks() {
-        try (
-                BufferedWriter bw = Files.newBufferedWriter(userTasksFile);
-                PrintWriter pw = new PrintWriter(bw)
-        ) {
-            for(Task task : tasksList) {
-                pw.println(task);
-            }
-        } catch (IOException e) {e.printStackTrace();}
+        databaseInterface.saveUserTasks(this.user, this.tasksList);
     }
 
     /**
